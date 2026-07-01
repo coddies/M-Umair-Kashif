@@ -142,6 +142,37 @@
         </div>
       </div>
     </div>
+    <script>
+      (function() {
+        let hidden = false;
+        function scheduleHide() { setTimeout(hide, 1500); }
+        function hide() {
+          if (hidden) return;
+          hidden = true;
+          const p = document.getElementById("boot-preloader");
+          if (p) {
+            p.style.opacity = "0";
+            p.style.transition = "opacity 0.5s ease";
+            setTimeout(() => {
+              p.style.display = "none";
+              p.remove();
+              document.body.style.overflow = "";
+              document.body.classList.remove("preloader-active");
+            }, 500);
+          } else {
+            document.body.style.overflow = "";
+            document.body.classList.remove("preloader-active");
+          }
+        }
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", scheduleHide);
+        } else {
+          scheduleHide();
+        }
+        window.addEventListener("load", scheduleHide);
+        setTimeout(hide, 3000);
+      })();
+    </script>
 
     <!-- Custom Cursor (desktop) -->
     <div id="cursor-dot" class="cursor-dot hidden md:block"></div>

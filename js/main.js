@@ -2,17 +2,35 @@
  0. BOOT PRELOADER
  ═══════════════════════════════════════════════════════ */
 (function initPreloader() {
-  const preloader = document.getElementById("boot-preloader");
-  if (preloader) {
-    // 2.2 seconds total animation time
-    setTimeout(() => {
-      preloader.classList.add("fade-out");
-      setTimeout(() => {
-        preloader.remove();
-        document.body.classList.remove("preloader-active");
-      }, 700); // matches the 700ms transition duration in Tailwind class
-    }, 2200);
+  let preloaderHidden = false;
+  function scheduleHide() {
+    setTimeout(hidePreloader, 1500);
   }
+  function hidePreloader() {
+    if (preloaderHidden) return;
+    preloaderHidden = true;
+    const preloader = document.getElementById("boot-preloader");
+    if (preloader) {
+      preloader.style.opacity = "0";
+      preloader.style.transition = "opacity 0.5s ease";
+      setTimeout(() => {
+        preloader.style.display = "none";
+        preloader.remove();
+        document.body.style.overflow = "";
+        document.body.classList.remove("preloader-active");
+      }, 500);
+    } else {
+      document.body.style.overflow = "";
+      document.body.classList.remove("preloader-active");
+    }
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", scheduleHide);
+  } else {
+    scheduleHide();
+  }
+  window.addEventListener("load", scheduleHide);
+  setTimeout(hidePreloader, 3000);
 })();
 
 /* ═══════════════════════════════════════════════════════
