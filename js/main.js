@@ -318,16 +318,54 @@ window.addEventListener('keydown', function (e) {
  ═══════════════════════════════════════════════════════ */
 function handleForm(e) {
   e.preventDefault();
+  const form = e.target;
   const btn = document.getElementById("form-btn");
   const prevHTML = btn.innerHTML;
+
+  // 1. Honeypot check (hidden website input)
+  const honeypot = form.querySelector('input[name="website"]');
+  if (honeypot && honeypot.value) {
+    // Silently reject the bot submission without indicating failure
+    btn.innerHTML = `❯ TRANSMITTING...`;
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.innerHTML = `<span class="material-symbols-outlined text-sm">check</span>Message Sent!`;
+      btn.classList.add("bg-green-500", "text-white", "border-green-500");
+      form.reset();
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.innerHTML = prevHTML;
+        btn.classList.remove("bg-green-500", "text-white", "border-green-500");
+      }, 4000);
+    }, 1500);
+    return;
+  }
+
+  // 2. Input Sanitization (strip HTML tags from name, email, message)
+  const sanitize = (val) => val.replace(/<[^>]*>/g, '').trim();
+  const nameInput = form.querySelector('#f-name');
+  const emailInput = form.querySelector('#f-email');
+  const msgInput = form.querySelector('#f-msg');
+  
+  if (nameInput) nameInput.value = sanitize(nameInput.value);
+  if (emailInput) emailInput.value = sanitize(emailInput.value);
+  if (msgInput) msgInput.value = sanitize(msgInput.value);
+
+  // 3. Disable button (Rate Limiting)
   btn.innerHTML = `<span class="material-symbols-outlined animate-spin text-sm">refresh</span>Sending...`;
+  btn.disabled = true;
+
+  // Simulate API transmission
   setTimeout(() => {
     btn.innerHTML = `<span class="material-symbols-outlined text-sm">check</span>Message Sent!`;
     btn.classList.add("bg-green-500", "text-white", "border-green-500");
-    e.target.reset();
+    form.reset();
+
+    // 30 seconds rate limit cooldown for the submit button
     setTimeout(() => {
+      btn.disabled = false;
       btn.innerHTML = prevHTML;
       btn.classList.remove("bg-green-500", "text-white", "border-green-500");
-    }, 4000);
+    }, 30000);
   }, 1500);
 }
