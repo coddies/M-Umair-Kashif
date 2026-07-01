@@ -1768,76 +1768,70 @@
       <div class="grid md:grid-cols-2 gap-16 lg:gap-24 items-start">
         <!-- ── LEFT: Info column ── -->
         <div class="reveal from-left">
-          <div class="font-mono text-primary text-xs md:text-sm mb-4 opacity-80 flex items-center">
-            <span class="mr-2">$&gt;</span>
-            <span>establish_connection()</span>
+          <!-- Small yellow eyebrow with custom horizontal line -->
+          <div class="flex items-center gap-3 text-primary font-mono text-xs tracking-wider mb-4">
+            <span class="w-8 h-[1px] bg-primary"></span>
+            <span>GET IN TOUCH</span>
           </div>
 
           <!-- Heading with yellow underline on SOMETHING -->
           <h2
-            class="font-extrabold tracking-[-0.03em] leading-[0.95] mb-8"
+            class="font-extrabold tracking-[-0.03em] leading-[0.95] mb-8 text-white"
             style="font-size: clamp(38px, 5.5vw, 60px)"
           >
             LET'S BUILD<br />
-            <span
-              class="text-primary"
-              style="
-                text-decoration: underline;
-                text-decoration-thickness: 4px;
-                text-underline-offset: 12px;
-              "
-              >SOMETHING</span
-            >
+            <span class="text-primary">SOMETHING</span>
           </h2>
 
-          <p
-            class="text-[15px] text-on-surface-variant mb-10 leading-relaxed max-w-sm"
-          >
-            Open to internships, freelance projects, and learning opportunities
-            in AI, data, and software development. Reach out below.
-          </p>
-
           <!-- Terminal Block -->
-          <div class="bg-surface border border-white/10 p-6 font-mono text-xs md:text-sm space-y-4 leading-relaxed relative overflow-hidden">
-            <!-- Glowing top accent indicator -->
-            <div class="absolute top-0 left-0 right-0 h-[2px] bg-primary/45"></div>
-            <div class="absolute top-0 right-0 w-2 h-2 bg-primary animate-pulse"></div>
+          <div class="bg-[#0d0d0d] border border-yellow-400/20 p-5 font-mono text-xs md:text-sm space-y-4 leading-relaxed relative overflow-hidden mb-6">
+            <div class="text-primary text-[10px] md:text-xs mb-2 tracking-wider">// TERMINAL OUTPUT</div>
             <div>
-              <span class="text-primary">&gt; </span>
+              <span class="text-primary">❯ </span>
               <span class="text-on-surface-variant">location: </span>
               <span class="text-white">"Faisalabad, Pakistan"</span>
             </div>
             <div>
-              <span class="text-primary">&gt; </span>
+              <span class="text-primary">❯ </span>
               <span class="text-on-surface-variant">email: </span>
               <a href="mailto:muhmmadumairkashif@gmail.com" class="text-white hover:text-primary transition-colors underline decoration-primary/40 break-all">"muhmmadumairkashif@gmail.com"</a>
             </div>
             <div>
-              <span class="text-primary">&gt; </span>
+              <span class="text-primary">❯ </span>
               <span class="text-on-surface-variant">phone: </span>
               <a href="tel:+923358379777" class="text-white hover:text-primary transition-colors underline decoration-primary/40">"0335-8379777"</a>
             </div>
             <div>
-              <span class="text-primary">&gt; </span>
+              <span class="text-primary">❯ </span>
               <span class="text-on-surface-variant">status: </span>
-              <span class="text-primary">"AVAILABLE FOR WORK"</span>
+              <span class="text-[#4ade80]">"AVAILABLE_FOR_WORK"</span>
+              <span class="text-primary terminal-cursor ml-1 font-bold">█</span>
             </div>
           </div>
+
+          <!-- Short description paragraph below -->
+          <p class="text-[14px] text-on-surface-variant leading-relaxed max-w-sm">
+            Open to internships, freelance projects, and learning opportunities in AI, data, and software development. Reach out below.
+          </p>
         </div>
         <!-- /left -->
 
         <!-- ── RIGHT: Contact Form ── -->
-        <!-- NOTE: No backend yet — connect to Formspree or an API route later -->
         <form
           id="contact-form"
           onsubmit="handleForm(event)"
-          class="glass-card p-6 sm:p-8 md:p-10 space-y-8 relative reveal from-right"
+          class="bg-[#0d0d0d] border border-yellow-400/20 border-l-[3px] border-l-primary p-6 sm:p-8 md:p-10 space-y-8 relative reveal from-right"
           style="transition-delay: 0.1s"
         >
-          <!-- Accent bar -->
-          <div
-            class="absolute top-0 left-0 w-[4px] h-full bg-primary shadow-[0_0_12px_rgba(250,204,21,0.5)]"
-          ></div>
+          <!-- Top bar like terminal window titlebar -->
+          <div class="flex items-center justify-between border-b border-yellow-400/10 pb-4 mb-6">
+            <span class="font-mono text-primary text-[10px] uppercase tracking-wider font-bold">// TERMINAL COMMAND</span>
+            <div class="flex gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-white/20"></span>
+              <span class="w-2 h-2 rounded-full bg-white/20"></span>
+              <span class="w-2 h-2 rounded-full bg-primary/80"></span>
+            </div>
+          </div>
 
           <!-- Name -->
           <div>
@@ -1847,14 +1841,17 @@
             >
               // YOUR NAME
             </label>
-            <input
-              type="text"
-              id="f-name"
-              name="name"
-              placeholder="_"
-              required
-              class="w-full bg-transparent border-0 border-b-2 border-white/10 pb-2 outline-none focus:border-primary text-white text-base transition-colors terminal-input"
-            />
+            <div class="relative flex items-center">
+              <span class="absolute left-0 font-mono text-primary select-none">❯</span>
+              <input
+                type="text"
+                id="f-name"
+                name="name"
+                placeholder="Enter your name..."
+                required
+                class="pl-6 w-full bg-[#050505] border-0 border-b-2 border-primary/20 pb-2 outline-none focus:border-primary text-white text-base transition-colors terminal-input placeholder-white/20 font-mono"
+              />
+            </div>
           </div>
 
           <!-- Email -->
@@ -1865,14 +1862,17 @@
             >
               // YOUR EMAIL
             </label>
-            <input
-              type="email"
-              id="f-email"
-              name="email"
-              placeholder="_"
-              required
-              class="w-full bg-transparent border-0 border-b-2 border-white/10 pb-2 outline-none focus:border-primary text-white text-base transition-colors terminal-input"
-            />
+            <div class="relative flex items-center">
+              <span class="absolute left-0 font-mono text-primary select-none">❯</span>
+              <input
+                type="email"
+                id="f-email"
+                name="email"
+                placeholder="Enter your email address..."
+                required
+                class="pl-6 w-full bg-[#050505] border-0 border-b-2 border-primary/20 pb-2 outline-none focus:border-primary text-white text-base transition-colors terminal-input placeholder-white/20 font-mono"
+              />
+            </div>
           </div>
 
           <!-- Message -->
@@ -1883,29 +1883,32 @@
             >
               // YOUR MESSAGE
             </label>
-            <textarea
-              id="f-msg"
-              name="message"
-              placeholder="_"
-              rows="5"
-              required
-              class="w-full bg-transparent border-0 border-b-2 border-white/10 pb-2 outline-none focus:border-primary text-white text-base transition-colors resize-none terminal-input"
-            ></textarea>
+            <div class="relative flex items-start">
+              <span class="absolute left-0 top-1 font-mono text-primary select-none">❯</span>
+              <textarea
+                id="f-msg"
+                name="message"
+                placeholder="Enter your message..."
+                rows="5"
+                required
+                class="pl-6 w-full bg-[#050505] border-0 border-b-2 border-primary/20 pb-2 outline-none focus:border-primary text-white text-base transition-colors resize-none terminal-input placeholder-white/20 font-mono"
+              ></textarea>
+            </div>
           </div>
 
           <!-- Submit -->
           <button
             type="submit"
             id="form-btn"
-            class="w-full bg-primary text-on-primary py-5 font-semibold uppercase text-[11px] font-bold tracking-[.18em] uppercase flex items-center justify-center transition-all hover:bg-white hover:text-black hover:shadow-[0_0_40px_rgba(250,204,21,0.40)] active:scale-[0.98]"
+            class="w-full bg-primary text-black py-5 font-mono text-[11px] font-extrabold tracking-[.18em] uppercase flex items-center justify-center transition-all hover:bg-white hover:text-black hover:shadow-[0_0_40px_rgba(250,204,21,0.40)] active:scale-[0.98]"
           >
-            &gt; SEND MESSAGE
+            ❯ TRANSMIT MESSAGE
           </button>
 
           <!-- Success state (shown after submit) -->
           <div
             id="form-ok"
-            class="hidden text-center py-4 border border-primary/30 bg-primary/5"
+            class="hidden text-center py-4 border border-primary/30 bg-primary/5 animate-pulse"
           >
             <span
               class="material-symbols-outlined text-primary text-2xl block mb-1"

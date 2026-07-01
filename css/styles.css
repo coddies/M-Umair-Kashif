@@ -798,3 +798,8 @@ body.preloader-active {
   animation: cursor-blink 1.2s step-end infinite;
 }
 
+.terminal-cursor {
+  animation: cursor-blink 1.2s step-end infinite;
+}
+
+
