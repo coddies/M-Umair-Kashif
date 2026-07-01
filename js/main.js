@@ -176,10 +176,17 @@ const navObs = new IntersectionObserver(
         $navLinks.forEach((l) =>
           l.classList.toggle("active", l.dataset.s === id),
         );
+        // Update URL hash using replaceState so the back button doesn't break
+        if (id && id !== "home") {
+          history.replaceState(null, null, `#${id}`);
+        } else if (id === "home") {
+          // If scrolled to top/home, remove the hash
+          history.replaceState(null, null, window.location.pathname + window.location.search);
+        }
       }
     });
   },
-  { threshold: 0.4, rootMargin: "-60px 0px 0px 0px" },
+  { threshold: 0.5, rootMargin: "-80px 0px -20% 0px" },
 );
 document.querySelectorAll("section[id]").forEach((s) => navObs.observe(s));
 
