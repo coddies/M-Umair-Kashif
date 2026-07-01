@@ -1734,7 +1734,10 @@
       <div class="grid md:grid-cols-2 gap-16 lg:gap-24 items-start">
         <!-- ── LEFT: Info column ── -->
         <div class="reveal from-left">
-          <div class="section-label mb-4">Get In Touch</div>
+          <div class="font-mono text-primary text-xs md:text-sm mb-4 opacity-80 flex items-center">
+            <span class="mr-2">$&gt;</span>
+            <span>establish_connection()</span>
+          </div>
 
           <!-- Heading with yellow underline on SOMETHING -->
           <h2
@@ -1754,81 +1757,38 @@
           </h2>
 
           <p
-            class="text-[15px] text-on-surface-variant mb-12 leading-relaxed max-w-sm"
+            class="text-[15px] text-on-surface-variant mb-10 leading-relaxed max-w-sm"
           >
             Open to internships, freelance projects, and learning opportunities
             in AI, data, and software development. Reach out below.
           </p>
 
-          <!-- Contact rows -->
-          <div class="space-y-7">
-            <!-- Email -->
-            <a
-              href="mailto:muhmmadumairkashif@gmail.com"
-              class="flex items-center gap-5 group"
-            >
-              <div
-                class="w-12 h-12 bg-primary flex items-center justify-center text-on-primary group-hover:scale-110 transition-transform line-glow shrink-0"
-              >
-                <span class="material-symbols-outlined text-lg">mail</span>
-              </div>
-              <div>
-                <p
-                  class="font-semibold uppercase text-[10px] font-bold tracking-[0.06em] text-on-surface-variant"
-                >
-                  EMAIL
-                </p>
-                <p
-                  class="font-bold tracking-tight text-base group-hover:text-primary transition-colors break-all"
-                >
-                  muhmmadumairkashif@gmail.com
-                </p>
-              </div>
-            </a>
-
-            <!-- Phone -->
-            <a href="tel:+923358379777" class="flex items-center gap-5 group">
-              <div
-                class="w-12 h-12 border border-primary flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-all shrink-0"
-              >
-                <span class="material-symbols-outlined text-lg">phone</span>
-              </div>
-              <div>
-                <p
-                  class="font-semibold uppercase text-[10px] font-bold tracking-[0.06em] text-on-surface-variant"
-                >
-                  PHONE
-                </p>
-                <p
-                  class="font-bold tracking-tight text-base group-hover:text-primary transition-colors"
-                >
-                  0335-8379777
-                </p>
-              </div>
-            </a>
-
-            <!-- Location -->
-            <div class="flex items-center gap-5">
-              <div
-                class="w-12 h-12 border border-primary flex items-center justify-center text-primary shrink-0"
-              >
-                <span class="material-symbols-outlined text-lg"
-                  >location_on</span
-                >
-              </div>
-              <div>
-                <p
-                  class="font-semibold uppercase text-[10px] font-bold tracking-[0.06em] text-on-surface-variant"
-                >
-                  LOCATION
-                </p>
-                <p class="font-bold tracking-tight text-base">
-                  Faisalabad, Pakistan
-                </p>
-              </div>
+          <!-- Terminal Block -->
+          <div class="bg-surface border border-white/10 p-6 font-mono text-xs md:text-sm space-y-4 leading-relaxed relative overflow-hidden">
+            <!-- Glowing top accent indicator -->
+            <div class="absolute top-0 left-0 right-0 h-[2px] bg-primary/45"></div>
+            <div class="absolute top-0 right-0 w-2 h-2 bg-primary animate-pulse"></div>
+            <div>
+              <span class="text-primary">&gt; </span>
+              <span class="text-on-surface-variant">location: </span>
+              <span class="text-white">"Faisalabad, Pakistan"</span>
+            </div>
+            <div>
+              <span class="text-primary">&gt; </span>
+              <span class="text-on-surface-variant">email: </span>
+              <a href="mailto:muhmmadumairkashif@gmail.com" class="text-white hover:text-primary transition-colors underline decoration-primary/40 break-all">"muhmmadumairkashif@gmail.com"</a>
+            </div>
+            <div>
+              <span class="text-primary">&gt; </span>
+              <span class="text-on-surface-variant">phone: </span>
+              <a href="tel:+923358379777" class="text-white hover:text-primary transition-colors underline decoration-primary/40">"0335-8379777"</a>
+            </div>
+            <div>
+              <span class="text-primary">&gt; </span>
+              <span class="text-on-surface-variant">status: </span>
+              <span class="text-primary">"AVAILABLE FOR WORK"</span>
             </div>
           </div>
-          <!-- /contact rows -->
         </div>
         <!-- /left -->
 
@@ -1842,71 +1802,70 @@
         >
           <!-- Accent bar -->
           <div
-            class="absolute top-0 left-0 w-[3px] h-full bg-primary line-glow"
+            class="absolute top-0 left-0 w-[4px] h-full bg-primary shadow-[0_0_12px_rgba(250,204,21,0.5)]"
           ></div>
 
           <!-- Name -->
-          <div class="fl-group relative">
+          <div>
+            <label
+              for="f-name"
+              class="block font-mono text-primary text-[10px] md:text-xs font-bold tracking-[0.08em] mb-2"
+            >
+              // YOUR NAME
+            </label>
             <input
               type="text"
               id="f-name"
               name="name"
-              placeholder=" "
+              placeholder="_"
               required
-              class="w-full bg-transparent border-0 border-b-2 border-white/10 pt-6 pb-2 outline-none focus:border-primary peer text-white text-base transition-colors"
+              class="w-full bg-transparent border-0 border-b-2 border-white/10 pb-2 outline-none focus:border-primary text-white text-base transition-colors terminal-input"
             />
-            <label
-              for="f-name"
-              class="absolute left-0 top-6 text-on-surface-variant font-semibold uppercase text-[11px] font-bold tracking-[0.06em]"
-            >
-              FULL NAME
-            </label>
           </div>
 
           <!-- Email -->
-          <div class="fl-group relative">
+          <div>
+            <label
+              for="f-email"
+              class="block font-mono text-primary text-[10px] md:text-xs font-bold tracking-[0.08em] mb-2"
+            >
+              // YOUR EMAIL
+            </label>
             <input
               type="email"
               id="f-email"
               name="email"
-              placeholder=" "
+              placeholder="_"
               required
-              class="w-full bg-transparent border-0 border-b-2 border-white/10 pt-6 pb-2 outline-none focus:border-primary peer text-white text-base transition-colors"
+              class="w-full bg-transparent border-0 border-b-2 border-white/10 pb-2 outline-none focus:border-primary text-white text-base transition-colors terminal-input"
             />
-            <label
-              for="f-email"
-              class="absolute left-0 top-6 text-on-surface-variant font-semibold uppercase text-[11px] font-bold tracking-[0.06em]"
-            >
-              EMAIL ADDRESS
-            </label>
           </div>
 
           <!-- Message -->
-          <div class="fl-group relative">
+          <div>
+            <label
+              for="f-msg"
+              class="block font-mono text-primary text-[10px] md:text-xs font-bold tracking-[0.08em] mb-2"
+            >
+              // YOUR MESSAGE
+            </label>
             <textarea
               id="f-msg"
               name="message"
-              placeholder=" "
+              placeholder="_"
               rows="5"
               required
-              class="w-full bg-transparent border-0 border-b-2 border-white/10 pt-6 pb-2 outline-none focus:border-primary peer text-white text-base transition-colors resize-none"
+              class="w-full bg-transparent border-0 border-b-2 border-white/10 pb-2 outline-none focus:border-primary text-white text-base transition-colors resize-none terminal-input"
             ></textarea>
-            <label
-              for="f-msg"
-              class="absolute left-0 top-6 text-on-surface-variant font-semibold uppercase text-[11px] font-bold tracking-[0.06em]"
-            >
-              MESSAGE
-            </label>
           </div>
 
           <!-- Submit -->
           <button
             type="submit"
             id="form-btn"
-            class="w-full bg-primary text-on-primary py-5 font-semibold uppercase text-[11px] font-bold tracking-[.18em] uppercase flex items-center justify-center gap-2 transition-all hover:bg-white hover:text-black hover:shadow-[0_0_40px_rgba(250,204,21,0.40)] active:scale-[0.98]"
+            class="w-full bg-primary text-on-primary py-5 font-semibold uppercase text-[11px] font-bold tracking-[.18em] uppercase flex items-center justify-center transition-all hover:bg-white hover:text-black hover:shadow-[0_0_40px_rgba(250,204,21,0.40)] active:scale-[0.98]"
           >
-            <span class="material-symbols-outlined text-base">send</span>
-            SEND MESSAGE
+            &gt; SEND MESSAGE
           </button>
 
           <!-- Success state (shown after submit) -->
@@ -1925,6 +1884,11 @@
               MESSAGE SENT SUCCESSFULLY
             </p>
           </div>
+
+          <!-- Muted response info -->
+          <p class="text-center font-mono text-[10px] md:text-xs text-on-surface-variant opacity-60 mt-4">
+            // Response within 24 hours
+          </p>
         </form>
       </div>
     </section>

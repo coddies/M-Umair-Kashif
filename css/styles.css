@@ -785,3 +785,16 @@ body.preloader-active {
 .resume-btn:hover {
   color: #facc15;
 }
+
+/* Terminal input blinking cursor placeholder */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.terminal-input::placeholder {
+  color: #facc15 !important;
+  opacity: 1 !important;
+  animation: cursor-blink 1.2s step-end infinite;
+}
+
