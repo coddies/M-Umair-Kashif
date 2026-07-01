@@ -1,0 +1,2014 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Muhammad Umair Kashif — AI & Data Science Student Portfolio"
+    />
+    <meta name="author" content="Muhammad Umair Kashif" />
+    <meta property="og:title" content="Muhammad Umair Kashif | Portfolio" />
+    <meta property="og:description" content="AI & Data Science Student | Cisco Certified" />
+    <title>Muhammad Umair Kashif | Portfolio</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+
+    <!-- ─── Swiper.js ───────────────────────────────────────── -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- ─── Tailwind CSS CDN ─────────────────────────────────── -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- ─── Google Fonts ────────────────────────────────────── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ─── Material Icons ──────────────────────────────────── -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            /* ── Color Palette ── */
+            colors: {
+              background: "#050505",
+              surface: "#1A1A1A",
+              "surface-container": "#231f14",
+              "surface-container-low": "#1f1b11",
+              "surface-container-lowest": "#110e05",
+              "surface-bright": "#3e392d",
+              "on-surface": "#ebe2d0",
+              "on-surface-variant": "#d1c6ab",
+              primary: "#facc15" /* yellow accent */,
+              "primary-dim": "#eec200",
+              "primary-container": "#facc15",
+              "on-primary": "#231b00",
+              "on-primary-fixed": "#231b00",
+              "inverse-surface": "#ebe2d0",
+              "inverse-on-surface": "#353024",
+              error: "#ffb4ab",
+            },
+
+            /* ── Border Radius ─────────────────────────────────
+ 0px everywhere, 8px for chips/badges, full for dots */
+            borderRadius: {
+              DEFAULT: "0px",
+              none: "0px",
+              sm: "0px",
+              md: "0px",
+              lg: "0px",
+              xl: "8px" /* chips / badges */,
+              "2xl": "8px",
+              "3xl": "8px",
+              full: "9999px" /* dots / avatars */,
+            },
+
+            /* ── Typography ── */
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+
+            /* ── Spacing tokens ── */
+            spacing: {
+              "desktop-x": "64px",
+              "mobile-x": "16px",
+              section: "160px",
+              gutter: "24px",
+            },
+
+            /* ── Container ── */
+            maxWidth: {
+              site: "1280px",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- ─── Global Styles ───────────────────────────────────── -->
+    <link rel="stylesheet" href="css/styles.css?v=6" />
+  </head>
+
+  <!-- ═══════════════════════════════════════════════════════════
+ BODY
+═══════════════════════════════════════════════════════════ -->
+  <body
+    class="bg-background text-on-surface overflow-x-hidden selection:bg-yellow-900/50 selection:text-yellow-200"
+    class="preloader-active"
+  >
+    <!-- ═══════════════════════════════════════════════════════
+         BOOT PRELOADER
+         ═══════════════════════════════════════════════════════ -->
+    <div
+      id="boot-preloader"
+      class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#050505] transition-all duration-700 ease-in-out"
+    >
+      <div
+        class="flex flex-col items-start w-full max-w-[320px] md:max-w-[450px] px-6"
+      >
+        <div
+          class="font-mono text-primary text-xs md:text-sm mb-2 opacity-80 flex items-center"
+        >
+          <span class="mr-2">$&gt;</span>
+          <span
+            class="typing-text overflow-hidden whitespace-nowrap border-r-2 border-primary pr-1"
+            >initializing portfolio...</span
+          >
+        </div>
+        <h1
+          class="font-bold text-2xl md:text-3xl text-white tracking-widest uppercase mb-6 glitch-reveal w-full"
+        >
+          Muhammad Umair <span class="text-primary">Kashif</span>
+        </h1>
+        <div
+          class="w-full h-1 bg-surface-bright rounded-full overflow-hidden relative"
+        >
+          <div
+            class="h-full bg-primary absolute top-0 left-0 w-0 progress-fill"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Custom Cursor (desktop) -->
+    <div id="cursor-dot" class="cursor-dot hidden md:block"></div>
+    <div id="cursor-ring" class="cursor-ring hidden md:block"></div>
+
+    <!-- ═══════════════════════════════════════════════════════
+ ██████ NAVBAR
+ ═══════════════════════════════════════════════════════════ -->
+    <header
+      id="navbar"
+      class="fixed top-0 inset-x-0 z-50 border-b border-white/10 transition-all duration-500 bg-[rgba(5,5,5,0.25)] backdrop-blur-xl"
+    >
+      <div
+        class="max-w-site mx-auto px-mobile-x md:px-desktop-x h-16 flex items-center justify-between gap-8"
+      >
+        <!-- ── Logo ── -->
+        <a
+          href="#home"
+          id="logo"
+          class="font-extrabold tracking-[-0.03em] text-xl tracking-tighter text-primary shrink-0 text-glow transition-transform hover:scale-105"
+        >
+          UMAIR<span class="text-on-surface">.K</span>
+        </a>
+
+        <!-- ── Desktop Nav Links ── -->
+        <nav
+          class="hidden md:flex items-center gap-7"
+          aria-label="Main navigation"
+        >
+          <a href="#about" class="nav-link" data-s="about">About</a>
+          <a href="#education" class="nav-link" data-s="education">Education</a>
+          <a href="#skills" class="nav-link" data-s="skills">Skills</a>
+          <a href="#certs" class="nav-link" data-s="certs">Certifications</a>
+          <a href="#work" class="nav-link" data-s="work">Work</a>
+          <a href="#contact" class="nav-link" data-s="contact">Contact</a>
+        </nav>
+
+        <!-- ── Desktop CTA ── -->
+        <a
+          href="#contact"
+          class="hidden md:inline-flex items-center gap-2 shrink-0 bg-primary text-on-primary font-semibold uppercase text-[11px] font-bold tracking-[0.06em] uppercase px-6 py-2.5 transition-all duration-200 hover:bg-white hover:shadow-[0_0_24px_rgba(250,204,21,0.45)] active:scale-95"
+        >
+          Hire Me
+          <span class="material-symbols-outlined text-sm leading-none"
+            >arrow_forward</span
+          >
+        </a>
+
+        <!-- ── Mobile Hamburger ── -->
+        <button
+          id="menu-btn"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="mobile-overlay"
+          class="md:hidden flex flex-col items-center justify-center gap-[5px] w-10 h-10 shrink-0 focus:outline-none"
+        >
+          <span class="ham-bar"></span>
+          <span class="ham-bar"></span>
+          <span class="ham-bar"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════════════════
+ MOBILE FULL-SCREEN OVERLAY MENU
+ ═══════════════════════════════════════════════════════════ -->
+    <div
+      id="mobile-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Navigation menu"
+    >
+      <!-- Close button top-right -->
+      <button
+        id="overlay-close"
+        aria-label="Close menu"
+        class="absolute top-5 right-5 w-11 h-11 border border-white/15 flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-colors"
+      >
+        <span class="material-symbols-outlined">close</span>
+      </button>
+
+      <!-- Logo inside overlay -->
+      <span
+        class="font-extrabold tracking-[-0.03em] text-2xl text-primary text-glow absolute top-5 left-5"
+      >
+        UMAIR.K
+      </span>
+
+      <!-- Nav links — large, centered -->
+      <a href="#about" class="mobile-nav-link" onclick="closeMobile()">About</a>
+      <a href="#skills" class="mobile-nav-link" onclick="closeMobile()"
+        >Skills</a
+      >
+      <a href="#certs" class="mobile-nav-link" onclick="closeMobile()"
+        >Certifications</a
+      >
+      <a href="#work" class="mobile-nav-link" onclick="closeMobile()">Work</a>
+      <a href="#contact" class="mobile-nav-link" onclick="closeMobile()"
+        >Contact</a
+      >
+
+      <!-- CTA at bottom -->
+      <a
+        href="#contact"
+        onclick="closeMobile()"
+        class="mt-4 bg-primary text-on-primary font-semibold uppercase text-sm font-bold tracking-[0.06em] uppercase px-10 py-4 hover:bg-white transition-colors"
+      >
+        Hire Me
+      </a>
+
+      <!-- Decorative bottom label -->
+      <p
+        class="absolute bottom-8 font-semibold uppercase text-[10px] tracking-[0.06em] text-on-surface-variant"
+      >
+        © 2026 MUHAMMAD UMAIR KASHIF
+      </p>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
+ ██████ HERO #home
+ ═══════════════════════════════════════════════════════════ -->
+    <section
+      id="home"
+      class="relative min-h-screen flex items-center overflow-hidden grid-bg"
+    >
+      <!-- Atmospheric glow blobs -->
+      <div
+        class="absolute top-[30%] left-[20%] w-[500px] h-[500px] rounded-full bg-yellow-400/[0.035] blur-[120px] pointer-events-none"
+      ></div>
+      <div
+        class="absolute bottom-[10%] right-[10%] w-[360px] h-[360px] rounded-full bg-yellow-500/[0.025] blur-[100px] pointer-events-none"
+      ></div>
+
+      <!-- ── Main grid ── -->
+      <div
+        class="relative z-10 w-full max-w-site mx-auto px-mobile-x md:px-desktop-x pt-28 pb-20 grid grid-cols-1 md:grid-cols-2 gap-y-12 md:gap-y-0 md:gap-14 lg:gap-24 items-center"
+      >
+        <!-- ══════════════════════════════════════
+ LEFT COLUMN
+ ══════════════════════════════════════ -->
+        <div class="flex flex-col order-2 md:order-1">
+          <!-- Status pill -->
+          <div class="section-label mb-7 reveal">Available for Work</div>
+
+          <!-- ── Main headline ── -->
+          <h1
+            id="hero-headline"
+            class="font-extrabold tracking-[-0.03em] leading-[0.92] tracking-[-0.03em] text-white text-glow mb-7 reveal"
+            style="font-size: clamp(40px, 10vw, 92px); transition-delay: 0.06s"
+          >
+            MUHAMMAD<br />
+            <span class="grad-text">UMAIR</span><br />
+            KASHIF
+          </h1>
+
+          <!-- ── Typing animation line ── -->
+          <div
+            class="flex items-center gap-2.5 mb-8 reveal"
+            style="transition-delay: 0.13s"
+            aria-live="polite"
+          >
+            <!-- Terminal icon -->
+            <span
+              class="material-symbols-outlined text-primary shrink-0"
+              style="
+                font-size: 17px;
+                font-variation-settings: &quot;FILL&quot; 1;
+              "
+              >terminal</span
+            >
+            <!-- Typed text -->
+            <span
+              class="font-medium text-sm text-primary/80 tracking-wide"
+              id="hero-typing"
+            ></span>
+            <!-- Blinking cursor bar -->
+            <span
+              id="hero-cursor"
+              class="inline-block w-[2px] h-[1.1em] bg-primary align-middle"
+              style="animation: blink 1s step-end infinite; flex-shrink: 0"
+            ></span>
+          </div>
+
+          <!-- ── Sub-tagline ── -->
+          <p
+            class="text-[15px] text-on-surface-variant max-w-[420px] leading-relaxed mb-10 reveal"
+            style="transition-delay: 0.2s"
+          >
+            Passionate about
+            <span class="text-white font-medium"
+              >AI&nbsp;&amp;&nbsp;Data Science</span
+            >, certified in
+            <span class="text-white font-medium"
+              >Cisco Networking&nbsp;&amp;&nbsp;IT</span
+            >, and building real-world software with Python.
+          </p>
+
+          <!-- ── CTA Buttons ── -->
+          <div
+            class="flex flex-wrap gap-4 reveal"
+            style="transition-delay: 0.27s"
+          >
+            <!-- Filled yellow — primary action -->
+            <a
+              href="#certs"
+              id="btn-certs"
+              class="group relative inline-flex items-center gap-2 bg-primary text-on-primary px-8 py-4 font-semibold uppercase text-[11px] font-bold tracking-[.16em] uppercase transition-all duration-250 hover:bg-white hover:text-black hover:shadow-[0_0_36px_rgba(250,204,21,0.50)] hover:scale-105 active:scale-95"
+            >
+              <span
+                class="material-symbols-outlined text-sm"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >verified</span
+              >
+              View Certifications
+            </a>
+
+            <!-- Outlined yellow — secondary action -->
+            <a
+              href="#contact"
+              id="btn-contact"
+              class="group inline-flex items-center gap-2 border-2 border-primary text-primary px-8 py-4 font-semibold uppercase text-[11px] font-bold tracking-[.16em] uppercase transition-all duration-250 hover:bg-primary hover:text-on-primary hover:shadow-[0_0_24px_rgba(250,204,21,0.30)] active:scale-95"
+            >
+              <span class="material-symbols-outlined text-sm">mail</span>
+              Contact Me
+            </a>
+          </div>
+        </div>
+
+        <!-- ── Social icon strip ── -->
+        <div
+          class="flex items-center gap-4 mt-4 md:mt-0 reveal order-3 md:col-start-1 md:row-start-2"
+          style="transition-delay: 0.34s"
+        >
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub profile"
+            class="w-9 h-9 border border-white/10 flex items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-all duration-200 hover:scale-110 hover:line-glow"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.8 2.6 1.3 3.3 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn profile"
+            class="w-9 h-9 border border-white/10 flex items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-all duration-200 hover:scale-110 hover:line-glow"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3-1.8-3-1.9 0-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.7-1.9 3.4-1.9 3.7 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.4H3.5V9h3.6v11.4z"
+              />
+            </svg>
+          </a>
+          <a
+            href="mailto:hello@umair.k"
+            aria-label="Send email"
+            class="w-9 h-9 border border-white/10 flex items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-all duration-200 hover:scale-110 hover:line-glow"
+          >
+            <span class="material-symbols-outlined" style="font-size: 16px"
+              >mail</span
+            >
+          </a>
+
+          <!-- Thin divider -->
+          <div class="w-px h-7 bg-white/10 mx-1"></div>
+
+          <!-- Resume button — animated border, uses dedicated viewer to bypass IDM -->
+          <a
+            href="resume.html"
+            target="_blank"
+            class="resume-btn"
+          >
+            <span class="material-symbols-outlined" style="font-size:14px">description</span>
+            Résumé
+          </a>
+        </div>
+
+        <!-- ══════════════════════════════════════
+ RIGHT COLUMN — Layered Photo Frame
+ (hidden on mobile)
+ ══════════════════════════════════════ -->
+        <div
+          class="flex justify-center items-center order-1 md:order-2 md:col-start-2 md:row-span-2 md:row-start-1"
+        >
+          <div class="photo-stage" id="photo-stage">
+            <!-- Layer 1: outermost accent border (12 deg → 0 on hover) -->
+            <div class="photo-frame-outer"></div>
+
+            <!-- Layer 2: yellow-bordered frame (6 deg → 0 on hover) -->
+            <div class="photo-frame-mid"></div>
+
+            <!-- Layer 3: surface-color fill div (3 deg → 0 on hover) -->
+            <div class="photo-frame-bg"></div>
+
+            <!-- Layer 4: photo, grayscale → color on hover -->
+            <div class="photo-img-wrap">
+              <img
+                src="assets/images/profile.png"
+                alt="Muhammad Umair Kashif portrait"
+                class="photo-img"
+              />
+              <div class="photo-vignette"></div>
+            </div>
+
+            <!-- Floating "Open to Work" badge -->
+            <div class="photo-badge">
+              <div
+                class="w-2 h-2 rounded-full bg-primary"
+                style="
+                  animation: blink 1.4s ease-in-out infinite;
+                  box-shadow: 0 0 6px #facc15;
+                "
+              ></div>
+              <span
+                class="font-semibold uppercase text-[10px] font-bold tracking-[.15em] text-primary"
+                >OPEN TO WORK</span
+              >
+            </div>
+
+            <!-- Corner accent brackets (purely decorative) -->
+            <div
+              class="absolute -top-3 -left-3 w-6 h-6 border-t-2 border-l-2 border-primary"
+            ></div>
+            <div
+              class="absolute -bottom-3 -right-3 w-6 h-6 border-b-2 border-r-2 border-primary z-30"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <!-- /grid -->
+
+      <!-- ── Scroll cue ── -->
+      <div
+        class="absolute bottom-7 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
+      >
+        <span
+          class="font-semibold uppercase text-[9px] tracking-[.22em] text-on-surface-variant"
+          >SCROLL</span
+        >
+        <div
+          class="w-px h-10 bg-gradient-to-b from-primary to-transparent animate-bounce"
+          style="box-shadow: 0 0 6px #facc15"
+        ></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+ TICKER BAND
+ ═══════════════════════════════════════════════════════════ -->
+    <div
+      class="w-full overflow-hidden bg-primary py-3 border-y border-yellow-400/30"
+    >
+      <div class="ticker-track flex gap-0">
+        <span
+          class="font-semibold uppercase text-xs text-on-primary tracking-[.08em] pr-16"
+        >
+          AI DEVELOPMENT &nbsp;✦&nbsp; FULL STACK ENGINEERING &nbsp;✦&nbsp;
+          CYBERSECURITY &nbsp;✦&nbsp; DATA SCIENCE &nbsp;✦&nbsp; NETWORKING
+          &nbsp;✦&nbsp; PYTHON &nbsp;✦&nbsp; ETHICAL HACKING &nbsp;✦&nbsp;
+          MACHINE LEARNING &nbsp;✦&nbsp; IT ESSENTIALS &nbsp;✦&nbsp;
+        </span>
+        <span
+          class="font-semibold uppercase text-xs text-on-primary tracking-[.08em] pr-16"
+          aria-hidden="true"
+        >
+          AI DEVELOPMENT &nbsp;✦&nbsp; FULL STACK ENGINEERING &nbsp;✦&nbsp;
+          CYBERSECURITY &nbsp;✦&nbsp; DATA SCIENCE &nbsp;✦&nbsp; NETWORKING
+          &nbsp;✦&nbsp; PYTHON &nbsp;✦&nbsp; ETHICAL HACKING &nbsp;✦&nbsp;
+          MACHINE LEARNING &nbsp;✦&nbsp; IT ESSENTIALS &nbsp;✦&nbsp;
+        </span>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
+ ██████ ABOUT #about
+ ═══════════════════════════════════════════════════════════ -->
+    <section
+      id="about"
+      class="py-section px-mobile-x md:px-desktop-x max-w-site mx-auto"
+    >
+      <div class="grid md:grid-cols-2 gap-20 items-center">
+        <!-- Photo (skewed frame) -->
+        <div class="relative reveal from-left">
+          <div
+            style="clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%)"
+            class="border-2 border-primary p-2 line-glow overflow-hidden"
+          >
+            <img
+              src="assets/images/about-setup.png"
+              alt="Ultra-modern AI desk setup"
+              class="w-full h-[460px] object-cover object-top grayscale hover:grayscale-0 brightness-90 transition-all duration-700"
+            />
+          </div>
+          <!-- Years badge -->
+          <div
+            class="absolute -bottom-8 -right-4 md:-right-8 w-[130px] h-[130px] bg-surface border-2 border-primary flex flex-col items-center justify-center line-glow z-10"
+          >
+            <span
+              class="font-extrabold tracking-[-0.03em] text-4xl text-primary counter"
+              data-target="3"
+              >0</span
+            >
+            <span
+              class="font-semibold uppercase text-[9px] font-bold tracking-[0.06em] text-on-surface-variant text-center mt-1"
+              >YEARS<br />EXP</span
+            >
+          </div>
+          <!-- Corner accents -->
+          <div
+            class="absolute -top-3 -left-3 w-7 h-7 border-t-2 border-l-2 border-primary"
+          ></div>
+          <div
+            class="absolute -bottom-12 -right-12 md:-right-16 w-7 h-7 border-b-2 border-r-2 border-primary hidden md:block"
+          ></div>
+        </div>
+
+        <!-- Text -->
+        <div class="reveal from-right" style="transition-delay: 0.1s">
+          <div class="section-label mb-4">Who I Am</div>
+          <h2
+            class="font-extrabold tracking-[-0.03em] text-4xl md:text-5xl mb-3 leading-tight"
+          >
+            ABOUT THE<br /><span class="text-primary">ENGINEER</span>
+          </h2>
+          <div class="w-20 h-[3px] bg-primary mb-8 line-glow"></div>
+
+          <p class="text-[17px] text-on-surface-variant mb-5 leading-relaxed">
+            I'm
+            <strong class="text-white font-medium"
+              >Muhammad Umair Kashif</strong
+            >
+            — a passionate technologist with a deep curiosity for how
+            intelligence (human &amp; artificial) shapes software systems.
+          </p>
+          <p class="text-base text-on-surface-variant mb-10 leading-relaxed">
+            I specialize in building
+            <strong class="text-white font-medium"
+              >AI-powered applications</strong
+            >, robust full-stack web platforms, and secure network
+            infrastructures. My philosophy: write code that lasts, design
+            experiences that matter.
+          </p>
+
+          <!-- Stat tiles -->
+          <div class="grid grid-cols-3 gap-3 mb-10">
+            <div class="glass-card p-5 border-t-2 border-primary text-center">
+              <span
+                class="font-extrabold tracking-[-0.03em] text-3xl text-white block counter"
+                data-target="10"
+                >0</span
+              >
+              <span
+                class="font-semibold uppercase text-[9px] font-bold tracking-[0.06em] text-on-surface-variant mt-1 block"
+                >PROJECTS</span
+              >
+            </div>
+            <div class="glass-card p-5 border-t-2 border-primary text-center">
+              <span
+                class="font-extrabold tracking-[-0.03em] text-3xl text-white block counter"
+                data-target="10"
+                >0</span
+              >
+              <span
+                class="font-semibold uppercase text-[9px] font-bold tracking-[0.06em] text-on-surface-variant mt-1 block"
+                >CERTS</span
+              >
+            </div>
+            <div class="glass-card p-5 border-t-2 border-primary text-center">
+              <span
+                class="font-extrabold tracking-[-0.03em] text-3xl text-white block counter"
+                data-target="8"
+                >0</span
+              >
+              <span
+                class="font-semibold uppercase text-[9px] font-bold tracking-[0.06em] text-on-surface-variant mt-1 block"
+                >STACKS</span
+              >
+            </div>
+          </div>
+
+          <!-- Quick info -->
+          <ul class="space-y-3">
+            <li
+              class="flex items-center gap-3 font-semibold uppercase text-[13px] text-on-surface-variant"
+            >
+              <span class="material-symbols-outlined text-primary text-base"
+                >location_on</span
+              >
+              Pakistan — Available Remote Worldwide
+            </li>
+            <li
+              class="flex items-center gap-3 font-semibold uppercase text-[13px] text-on-surface-variant"
+            >
+              <span class="material-symbols-outlined text-primary text-base"
+                >verified</span
+              >
+              Cisco · DeepLearning.AI · Google Certified
+            </li>
+            <li
+              class="flex items-center gap-3 font-semibold uppercase text-[13px] text-on-surface-variant"
+            >
+              <span class="material-symbols-outlined text-primary text-base"
+                >code</span
+              >
+              Python · React · Node.js · TensorFlow · SQL
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ═══════════════════════════════════════════════════════
+ ██████ SKILLS #skills
+ ═══════════════════════════════════════════════════════════ -->
+    <section id="skills" class="py-section bg-surface-container-lowest">
+      <div class="max-w-site mx-auto px-mobile-x md:px-desktop-x">
+        <div class="section-label mb-4 justify-center reveal">
+          Technical Arsenal
+        </div>
+        <h2
+          class="font-extrabold tracking-[-0.03em] text-4xl md:text-5xl mb-2 text-center reveal"
+          style="transition-delay: 0.06s"
+        >
+          TECHNICAL <span class="text-primary">ARSENAL</span>
+        </h2>
+        <p
+          class="font-semibold uppercase text-[11px] tracking-[0.06em] text-on-surface-variant text-center mb-20 reveal"
+          style="transition-delay: 0.12s"
+        >
+          SKILLS BACKED BY CISCO, IBM &amp; REAL COURSEWORK
+        </p>
+
+        <!-- ── Bento 6-card grid ── -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+          <!-- ① AI & Data Foundations — spans 2 cols -->
+          <div class="md:col-span-2 glass-card p-8 reveal border-glow">
+            <div class="flex justify-between items-start mb-5">
+              <span
+                class="material-symbols-outlined text-primary text-4xl"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >neurology</span
+              >
+              <span
+                class="font-semibold uppercase text-xs text-on-surface-variant"
+                >01</span
+              >
+            </div>
+            <h3 class="font-bold tracking-tight text-2xl mb-6">
+              AI &amp; Data Foundations
+            </h3>
+            <div class="space-y-5">
+              <!-- AI Fundamentals (IBM SkillsBuild) -->
+              <div>
+                <div
+                  class="flex justify-between font-semibold uppercase text-xs mb-1.5"
+                >
+                  <span
+                    >AI Fundamentals
+                    <span class="text-on-surface-variant"
+                      >(IBM SkillsBuild)</span
+                    ></span
+                  >
+                  <span class="text-primary">90%</span>
+                </div>
+                <div class="h-1.5 w-full bg-white/10 overflow-hidden">
+                  <div class="skill-fill" data-w="90"></div>
+                </div>
+              </div>
+              <!-- Data Science Basics -->
+              <div>
+                <div
+                  class="flex justify-between font-semibold uppercase text-xs mb-1.5"
+                >
+                  <span>Data Science Basics</span>
+                  <span class="text-primary">80%</span>
+                </div>
+                <div class="h-1.5 w-full bg-white/10 overflow-hidden">
+                  <div class="skill-fill" data-w="80"></div>
+                </div>
+              </div>
+              <!-- Modern AI / LLM tools -->
+              <div>
+                <div
+                  class="flex justify-between font-semibold uppercase text-xs mb-1.5"
+                >
+                  <span>Modern AI / LLM tools</span>
+                  <span class="text-primary">85%</span>
+                </div>
+                <div class="h-1.5 w-full bg-white/10 overflow-hidden">
+                  <div class="skill-fill" data-w="85"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ② Python Development -->
+          <div class="glass-card p-8 reveal" style="transition-delay: 0.08s">
+            <span
+              class="material-symbols-outlined text-primary text-4xl mb-5 block"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >terminal</span
+            >
+            <h3 class="font-bold tracking-tight text-xl mb-3">
+              Python Development
+            </h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed">
+              Python
+              <span class="text-white/70">(Cisco / OpenEDG certified)</span>,
+              scripting, problem solving, basic automation.
+            </p>
+          </div>
+
+          <!-- ③ Networking & Security -->
+          <div class="glass-card p-8 reveal" style="transition-delay: 0.14s">
+            <span
+              class="material-symbols-outlined text-primary text-4xl mb-5 block"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >lan</span
+            >
+            <h3 class="font-bold tracking-tight text-xl mb-3">
+              Networking &amp; Security
+            </h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed">
+              Networking Basics, Cybersecurity, Ethical Hacking fundamentals
+              <span class="text-white/70">(Cisco Networking Academy)</span>.
+              Security-aware development practices applied across all projects.
+            </p>
+          </div>
+
+          <!-- ④ IT Essentials -->
+          <div class="glass-card p-8 reveal" style="transition-delay: 0.2s">
+            <span
+              class="material-symbols-outlined text-primary text-4xl mb-5 block"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >computer</span
+            >
+            <h3 class="font-bold tracking-tight text-xl mb-3">IT Essentials</h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed">
+              Hardware, OS troubleshooting, virtualization basics
+              <span class="text-white/70">(Cisco Certified)</span>.
+            </p>
+          </div>
+
+          <!-- ⑤ Creative & AI Tools — spans 2 cols -->
+          <div
+            class="md:col-span-2 glass-card p-8 reveal border-glow"
+            style="transition-delay: 0.16s"
+          >
+            <div class="flex justify-between items-start mb-5">
+              <span
+                class="material-symbols-outlined text-primary text-4xl"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >palette</span
+              >
+              <span
+                class="font-semibold uppercase text-xs text-on-surface-variant"
+                >05</span
+              >
+            </div>
+            <h3 class="font-bold tracking-tight text-2xl mb-3">
+              Creative &amp; AI Tools
+            </h3>
+            <p class="text-sm text-on-surface-variant mb-5 leading-relaxed">
+              Video Editing, 3D Animation, Graphic Design, plus AI tools
+              integrated into real projects.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-background border border-white/10 font-semibold uppercase text-xs rounded-xl"
+                >Video Editing</span
+              >
+              <span
+                class="px-3 py-1 bg-background border border-white/10 font-semibold uppercase text-xs rounded-xl"
+                >3D Animation</span
+              >
+              <span
+                class="px-3 py-1 bg-background border border-white/10 font-semibold uppercase text-xs rounded-xl"
+                >Graphic Design</span
+              >
+              <span
+                class="px-3 py-1 bg-background border border-primary/30 font-semibold uppercase text-xs text-primary rounded-xl"
+                >ChatGPT</span
+              >
+              <span
+                class="px-3 py-1 bg-background border border-primary/30 font-semibold uppercase text-xs text-primary rounded-xl"
+                >Midjourney</span
+              >
+              <span
+                class="px-3 py-1 bg-background border border-primary/30 font-semibold uppercase text-xs text-primary rounded-xl"
+                >TensorFlow</span
+              >
+            </div>
+          </div>
+
+          <!-- ⑥ Languages -->
+          <div
+            class="glass-card p-8 reveal"
+            style="transition-delay: 0.26s"
+          >
+            <span
+              class="material-symbols-outlined text-primary text-4xl mb-5 block"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >translate</span
+            >
+            <h3 class="font-bold tracking-tight text-xl mb-5">Languages</h3>
+            <div class="space-y-4">
+              <!-- English -->
+              <div>
+                <div class="flex justify-between font-semibold uppercase text-xs mb-1.5">
+                  <span>English</span>
+                  <span class="text-primary">Fluent</span>
+                </div>
+                <div class="h-1.5 w-full bg-white/10 overflow-hidden">
+                  <div class="skill-fill" data-w="85"></div>
+                </div>
+              </div>
+              <!-- Urdu -->
+              <div>
+                <div class="flex justify-between font-semibold uppercase text-xs mb-1.5">
+                  <span>Urdu</span>
+                  <span class="text-primary">Native</span>
+                </div>
+                <div class="h-1.5 w-full bg-white/10 overflow-hidden">
+                  <div class="skill-fill" data-w="100"></div>
+                </div>
+              </div>
+              <!-- Punjabi -->
+              <div>
+                <div class="flex justify-between font-semibold uppercase text-xs mb-1.5">
+                  <span>Punjabi</span>
+                  <span class="text-primary">Native</span>
+                </div>
+                <div class="h-1.5 w-full bg-white/10 overflow-hidden">
+                  <div class="skill-fill" data-w="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /bento -->
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+ ██████ CERTIFICATIONS #certs
+ ═══════════════════════════════════════════════════════════ -->
+    <section id="certs" class="py-section overflow-hidden">
+      <div class="max-w-site mx-auto px-mobile-x md:px-desktop-x mb-14">
+        <div class="section-label mb-4 reveal">Credentials</div>
+        <div
+          class="flex flex-col md:flex-row md:items-end justify-between gap-6"
+        >
+          <div>
+            <h2
+              class="font-extrabold tracking-[-0.03em] text-4xl md:text-5xl mb-2 reveal"
+            >
+              PROVEN <span class="text-primary">CREDENTIALS</span>
+            </h2>
+            <p
+              class="font-semibold uppercase text-[11px] tracking-[0.06em] text-on-surface-variant reveal"
+              style="transition-delay: 0.08s"
+            >
+              9 VERIFIED CERTIFICATES — CLICK ANY CARD TO VIEW PDF
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel wrapper -->
+      <div class="max-w-[1200px] mx-auto px-4 md:px-8 mb-2">
+        <!-- Swiper Container -->
+        <div class="swiper cert-swiper w-full overflow-hidden pb-6">
+          <div class="swiper-wrapper">
+            <!-- ① AI Fundamentals -->
+            <div
+              class="swiper-slide cert-card flex-shrink-0 w-[280px] md:w-[320px] glass-card p-7 cursor-pointer reveal group"
+              style="scroll-snap-align: start"
+              data-img="assets/images/certificates/ai-fundamentals.jpg"
+              data-pdf="assets/documents/certificates/ai-fundamentals.pdf"
+            >
+              <div
+                class="bg-surface-lowest w-full h-36 mb-6 flex items-center justify-center border border-white/5 transition-all relative overflow-hidden group-hover:border-primary/40 rounded-sm"
+              >
+                <img
+                  src="assets/images/badges/ai-fundamentals.png"
+                  alt="Badge"
+                  class="w-full h-full object-contain p-4 transition-all duration-500 grayscale-[50%] brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:drop-shadow-[0_0_18px_rgba(250,204,21,0.5)]"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'inline-block';
+                  "
+                />
+                <span
+                  class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform group-hover:drop-shadow-[0_0_12px_rgba(250,204,21,0.5)]"
+                  style="
+                    font-size: 56px;
+                    font-variation-settings: &quot;FILL&quot; 1;
+                    display: none;
+                  "
+                  >neurology</span
+                >
+                <div
+                  class="absolute bottom-3 inset-x-0 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0"
+                >
+                  <span
+                    class="bg-background/90 backdrop-blur border border-primary/30 text-primary font-semibold uppercase text-[9px] tracking-[0.08em] px-3 py-1.5 flex items-center gap-1.5 shadow-[0_0_10px_rgba(0,0,0,0.5)] rounded-full"
+                  >
+                    <span class="material-symbols-outlined text-[11px]"
+                      >visibility</span
+                    >
+                    Click to view
+                  </span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 mb-2">
+                <div
+                  class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"
+                ></div>
+                <span
+                  class="font-semibold uppercase text-[10px] font-bold tracking-[0.06em] text-primary"
+                  >IBM SKILLSBUILD / CISCO</span
+                >
+              </div>
+              <p class="font-bold tracking-tight text-base leading-snug mb-2">
+                Artificial Intelligence Fundamentals
+              </p>
+              <span
+                class="font-semibold uppercase text-[10px] text-on-surface-variant"
+                >Issued: Feb 27, 2026</span
+              >
+            </div>
+
+            <!-- ② Cybersecurity -->
+            <div
+              class="swiper-slide cert-card flex-shrink-0 w-[280px] md:w-[320px] glass-card p-7 cursor-pointer reveal group"
+              style="scroll-snap-align: start; transition-delay: 0.05s"
+              data-img="assets/images/certificates/cybersecurity.jpg"
+              data-pdf="assets/documents/certificates/cybersecurity.pdf"
+            >
+              <div
+                class="bg-surface-lowest w-full h-36 mb-6 flex items-center justify-center border border-white/5 transition-all relative overflow-hidden group-hover:border-primary/40 rounded-sm"
+              >
+                <img
+                  src="assets/images/badges/cybersecurity.png"
+                  alt="Badge"
+                  class="w-full h-full object-contain p-4 transition-all duration-500 grayscale-[50%] brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:drop-shadow-[0_0_18px_rgba(250,204,21,0.5)]"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'inline-block';
+                  "
+                />
+                <span
+                  class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform group-hover:drop-shadow-[0_0_12px_rgba(250,204,21,0.5)]"
+                  style="
+                    font-size: 56px;
+                    font-variation-settings: &quot;FILL&quot; 1;
+                    display: none;
+                  "
+                  >shield</span
+                >
+                <div
+                  class="absolute bottom-3 inset-x-0 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0"
+                >
+                  <span
+                    class="bg-background/90 backdrop-blur border border-primary/30 text-primary font-semibold uppercase text-[9px] tracking-[0.08em] px-3 py-1.5 flex items-center gap-1.5 shadow-[0_0_10px_rgba(0,0,0,0.5)] rounded-full"
+                  >
+                    <span class="material-symbols-outlined text-[11px]"
+                      >visibility</span
+                    >
+                    Click to view
+                  </span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 mb-2">
+                <div
+                  class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"
+                ></div>
+                <span
+                  class="font-semibold uppercase text-[10px] font-bold tracking-[0.06em] text-primary"
+                  >CISCO NETWORKING ACADEMY</span
+                >
+              </div>
+              <p class="font-bold tracking-tight text-base leading-snug mb-2">
+                Introduction to Cybersecurity
+              </p>
+              <span
+                class="font-semibold uppercase text-[10px] text-on-surface-variant"
+                >Issued: Feb 26, 2026</span
+              >
+            </div>
+
+            <!-- ③ English for IT -->
+            <div
+              class="swiper-slide cert-card flex-shrink-0 w-[280px] md:w-[320px] glass-card p-7 cursor-pointer reveal group"
+              style="scroll-snap-align: start; transition-delay: 0.1s"
+              data-img="assets/images/certificates/english-for-it.jpg"
+              data-pdf="assets/documents/certificates/english-for-it.pdf"
+            >
+              <div
+                class="bg-surface-lowest w-full h-36 mb-6 flex items-center justify-center border border-white/5 transition-all relative overflow-hidden group-hover:border-primary/40 rounded-sm"
+              >
+                <img
+                  src="assets/images/badges/english-for-it.png"
+                  alt="Badge"
+                  class="w-full h-full object-contain p-4 transition-all duration-500 grayscale-[50%] brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:drop-shadow-[0_0_18px_rgba(250,204,21,0.5)]"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'inline-block';
+                  "
+                />
+                <span
+                  class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform group-hover:drop-shadow-[0_0_12px_rgba(250,204,21,0.5)]"
+                  style="
+                    font-size: 56px;
+                    font-variation-settings: &quot;FILL&quot; 1;
+                    display: none;
+                  "
+                  >language</span
+                >
+                <div
+                  class="absolute bottom-3 inset-x-0 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0"
+                >
+                  <span
+                    class="bg-background/90 backdrop-blur border border-primary/30 text-primary font-semibold uppercase text-[9px] tracking-[0.08em] px-3 py-1.5 flex items-center gap-1.5 shadow-[0_0_10px_rgba(0,0,0,0.5)] rounded-full"
+                  >
+                    <span class="material-symbols-outlined text-[11px]"
+                      >visibility</span
+                    >
+                    Click to view
+                  </span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 mb-2">
+                <div
+                  class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"
+                ></div>
+                <span
+                  class="font-semibold uppercase text-[10px] font-bold tracking-[0.06em] text-primary"
+                  >CISCO / OPENEDG</span
+                >
+              </div>
+              <p class="font-bold tracking-tight text-base leading-snug mb-2">
+                English for IT 1
+              </p>
+              <span
+                class="font-semibold uppercase text-[10px] text-on-surface-variant"
+                >Issued: Feb 28, 2026</span
+              >
+            </div>
+
+            <!-- ④ Ethical Hacker -->
+            <div
+              class="swiper-slide cert-card flex-shrink-0 w-[280px] md:w-[320px] glass-card p-7 cursor-pointer reveal group"
+              style="scroll-snap-align: start; transition-delay: 0.15s"
+              data-img="assets/images/certificates/ethical-hacker.jpg"
+              data-pdf="assets/documents/certificates/ethical-hacker.pdf"
+            >
+              <div
+                class="bg-surface-lowest w-full h-36 mb-6 flex items-center justify-center border border-white/5 transition-all relative overflow-hidden group-hover:border-primary/40 rounded-sm"
+              >
+                <img
+                  src="assets/images/badges/ethical-hacker.png"
+                  alt="Badge"
+                  class="w-full h-full object-contain p-4 transition-all duration-500 grayscale-[50%] brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:drop-shadow-[0_0_18px_rgba(250,204,21,0.5)]"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'inline-block';
+                  "
+                />
+                <span
+                  class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform group-hover:drop-shadow-[0_0_12px_rgba(250,204,21,0.5)]"
+                  style="
+                    font-size: 56px;
+                    font-variation-settings: &quot;FILL&quot; 1;
+                    display: none;
+                  "
+                  >bug_report</span
+                >
+                <div
+                  class="absolute bottom-3 inset-x-0 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0"
+                >
+                  <span
+                    class="bg-background/90 backdrop-blur border border-primary/30 text-primary font-semibold uppercase text-[9px] tracking-[0.08em] px-3 py-1.5 flex items-center gap-1.5 shadow-[0_0_10px_rgba(0,0,0,0.5)] rounded-full"
+                  >
+                    <span class="material-symbols-outlined text-[11px]"
+                      >visibility</span
+                    >
+                    Click to view
+                  </span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 mb-2">
+                <div
+                  class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"
+                ></div>
+                <span
+                  class="font-semibold uppercase text-[10px] font-bold tracking-[0.06em] text-primary"
+                  >CISCO NETWORKING ACADEMY</span
+                >
+              </div>
+              <p class="font-bold tracking-tight text-base leading-snug mb-2">
+                Ethical Hacker
+              </p>
+              <span
+                class="font-semibold uppercase text-[10px] text-on-surface-variant"
+                >Issued: Feb 27, 2026</span
+              >
+            </div>
+
+            <!-- ⑤ Data Science -->
+            <div
+              class="swiper-slide cert-card flex-shrink-0 w-[280px] md:w-[320px] glass-card p-7 cursor-pointer reveal group"
+              style="scroll-snap-align: start; transition-delay: 0.2s"
+              data-img="assets/images/certificates/intro-to-data-science.jpg"
+              data-pdf="assets/documents/certificates/intro-to-data-science.pdf"
+            >
+              <div
+                class="bg-surface-lowest w-full h-36 mb-6 flex items-center justify-center border border-white/5 transition-all relative overflow-hidden group-hover:border-primary/40 rounded-sm"
+              >
+                <img
+                  src="assets/images/badges/data-science.png"
+                  alt="Badge"
+                  class="w-full h-full object-contain p-4 transition-all duration-500 grayscale-[50%] brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:drop-shadow-[0_0_18px_rgba(250,204,21,0.5)]"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'inline-block';
+                  "
+                />
+                <span
+                  class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform group-hover:drop-shadow-[0_0_12px_rgba(250,204,21,0.5)]"
+                  style="
+                    font-size: 56px;
+                    font-variation-settings: &quot;FILL&quot; 1;
+                    display: none;
+                  "
+                  >bar_chart</span
+                >
+                <div
+                  class="absolute bottom-3 inset-x-0 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0"
+                >
+                  <span
+                    class="bg-background/90 backdrop-blur border border-primary/30 text-primary font-semibold uppercase text-[9px] tracking-[0.08em] px-3 py-1.5 flex items-center gap-1.5 shadow-[0_0_10px_rgba(0,0,0,0.5)] rounded-full"
+                  >
+                    <span class="material-symbols-outlined text-[11px]"
+                      >visibility</span
+                    >
+                    Click to view
+                  </span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 mb-2">
+                <div
+                  class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"
+                ></div>
+                <span
+                  class="font-semibold uppercase text-[10px] font-bold tracking-[0.06em] text-primary"
+                  >CISCO NETWORKING ACADEMY</span
+                >
+              </div>
+              <p class="font-bold tracking-tight text-base leading-snug mb-2">
+                Introduction to Data Science
+              </p>
+              <span
+                class="font-semibold uppercase text-[10px] text-on-surface-variant"
+                >Issued: Feb 27, 2026</span
+              >
+            </div>
+
+            <!-- ⑥ Modern AI -->
+            <div
+              class="swiper-slide cert-card flex-shrink-0 w-[280px] md:w-[320px] glass-card p-7 cursor-pointer reveal group"
+              style="scroll-snap-align: start; transition-delay: 0.25s"
+              data-img="assets/images/certificates/intro-to-modern-ai.jpg"
+              data-pdf="assets/documents/certificates/intro-to-modern-ai.pdf"
+            >
+              <div
+                class="bg-surface-lowest w-full h-36 mb-6 flex items-center justify-center border border-white/5 transition-all relative overflow-hidden group-hover:border-primary/40 rounded-sm"
+              >
+                <img
+                  src="assets/images/badges/modern-ai.png"
+                  alt="Badge"
+                  class="w-full h-full object-contain p-4 transition-all duration-500 grayscale-[50%] brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:drop-shadow-[0_0_18px_rgba(250,204,21,0.5)]"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'inline-block';
+                  "
+                />
+                <span
+                  class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform group-hover:drop-shadow-[0_0_12px_rgba(250,204,21,0.5)]"
+                  style="
+                    font-size: 56px;
+                    font-variation-settings: &quot;FILL&quot; 1;
+                    display: none;
+                  "
+                  >psychology</span
+                >
+                <div
+                  class="absolute bottom-3 inset-x-0 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0"
+                >
+                  <span
+                    class="bg-background/90 backdrop-blur border border-primary/30 text-primary font-semibold uppercase text-[9px] tracking-[0.08em] px-3 py-1.5 flex items-center gap-1.5 shadow-[0_0_10px_rgba(0,0,0,0.5)] rounded-full"
+                  >
+                    <span class="material-symbols-outlined text-[11px]"
+                      >visibility</span
+                    >
+                    Click to view
+                  </span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 mb-2">
+                <div
+                  class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"
+                ></div>
+                <span
+                  class="font-semibold uppercase text-[10px] font-bold tracking-[0.06em] text-primary"
+                  >CISCO NETWORKING ACADEMY</span
+                >
+              </div>
+              <p class="font-bold tracking-tight text-base leading-snug mb-2">
+                Introduction to Modern AI
+              </p>
+              <span
+                class="font-semibold uppercase text-[10px] text-on-surface-variant"
+                >Issued: Feb 27, 2026</span
+              >
+            </div>
+
+            <!-- ⑦ IT Essentials -->
+            <div
+              class="swiper-slide cert-card flex-shrink-0 w-[280px] md:w-[320px] glass-card p-7 cursor-pointer reveal group"
+              style="scroll-snap-align: start; transition-delay: 0.3s"
+              data-img="assets/images/certificates/it-essentials.jpg"
+              data-pdf="assets/documents/certificates/it-essentials.pdf"
+            >
+              <div
+                class="bg-surface-lowest w-full h-36 mb-6 flex items-center justify-center border border-white/5 transition-all relative overflow-hidden group-hover:border-primary/40 rounded-sm"
+              >
+                <img
+                  src="assets/images/badges/it-essentials.png"
+                  alt="Badge"
+                  class="w-full h-full object-contain p-4 transition-all duration-500 grayscale-[50%] brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:drop-shadow-[0_0_18px_rgba(250,204,21,0.5)]"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'inline-block';
+                  "
+                />
+                <span
+                  class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform group-hover:drop-shadow-[0_0_12px_rgba(250,204,21,0.5)]"
+                  style="
+                    font-size: 56px;
+                    font-variation-settings: &quot;FILL&quot; 1;
+                    display: none;
+                  "
+                  >computer</span
+                >
+                <div
+                  class="absolute bottom-3 inset-x-0 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0"
+                >
+                  <span
+                    class="bg-background/90 backdrop-blur border border-primary/30 text-primary font-semibold uppercase text-[9px] tracking-[0.08em] px-3 py-1.5 flex items-center gap-1.5 shadow-[0_0_10px_rgba(0,0,0,0.5)] rounded-full"
+                  >
+                    <span class="material-symbols-outlined text-[11px]"
+                      >visibility</span
+                    >
+                    Click to view
+                  </span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 mb-2">
+                <div
+                  class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"
+                ></div>
+                <span
+                  class="font-semibold uppercase text-[10px] font-bold tracking-[0.06em] text-primary"
+                  >CISCO NETWORKING ACADEMY</span
+                >
+              </div>
+              <p class="font-bold tracking-tight text-base leading-snug mb-2">
+                IT Essentials
+              </p>
+              <span
+                class="font-semibold uppercase text-[10px] text-on-surface-variant"
+                >Issued: Sep 04, 2025</span
+              >
+            </div>
+
+            <!-- ⑧ Networking Basics -->
+            <div
+              class="swiper-slide cert-card flex-shrink-0 w-[280px] md:w-[320px] glass-card p-7 cursor-pointer reveal group"
+              style="scroll-snap-align: start; transition-delay: 0.35s"
+              data-img="assets/images/certificates/networking-basics.jpg"
+              data-pdf="assets/documents/certificates/networking-basics.pdf"
+            >
+              <div
+                class="bg-surface-lowest w-full h-36 mb-6 flex items-center justify-center border border-white/5 transition-all relative overflow-hidden group-hover:border-primary/40 rounded-sm"
+              >
+                <img
+                  src="assets/images/badges/networking-basics.png"
+                  alt="Badge"
+                  class="w-full h-full object-contain p-4 transition-all duration-500 grayscale-[50%] brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:drop-shadow-[0_0_18px_rgba(250,204,21,0.5)]"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'inline-block';
+                  "
+                />
+                <span
+                  class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform group-hover:drop-shadow-[0_0_12px_rgba(250,204,21,0.5)]"
+                  style="
+                    font-size: 56px;
+                    font-variation-settings: &quot;FILL&quot; 1;
+                    display: none;
+                  "
+                  >router</span
+                >
+                <div
+                  class="absolute bottom-3 inset-x-0 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0"
+                >
+                  <span
+                    class="bg-background/90 backdrop-blur border border-primary/30 text-primary font-semibold uppercase text-[9px] tracking-[0.08em] px-3 py-1.5 flex items-center gap-1.5 shadow-[0_0_10px_rgba(0,0,0,0.5)] rounded-full"
+                  >
+                    <span class="material-symbols-outlined text-[11px]"
+                      >visibility</span
+                    >
+                    Click to view
+                  </span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 mb-2">
+                <div
+                  class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"
+                ></div>
+                <span
+                  class="font-semibold uppercase text-[10px] font-bold tracking-[0.06em] text-primary"
+                  >CISCO NETWORKING ACADEMY</span
+                >
+              </div>
+              <p class="font-bold tracking-tight text-base leading-snug mb-2">
+                Networking Basics
+              </p>
+              <span
+                class="font-semibold uppercase text-[10px] text-on-surface-variant"
+                >Issued: Mar 03, 2026</span
+              >
+            </div>
+
+            <!-- ⑨ Python Essentials -->
+            <div
+              class="swiper-slide cert-card flex-shrink-0 w-[280px] md:w-[320px] glass-card p-7 cursor-pointer reveal group"
+              style="scroll-snap-align: start; transition-delay: 0.4s"
+              data-img="assets/images/certificates/python-essentials.jpg"
+              data-pdf="assets/documents/certificates/python-essentials.pdf"
+            >
+              <div
+                class="bg-surface-lowest w-full h-36 mb-6 flex items-center justify-center border border-white/5 transition-all relative overflow-hidden group-hover:border-primary/40 rounded-sm"
+              >
+                <img
+                  src="assets/images/badges/python-essentials.png"
+                  alt="Badge"
+                  class="w-full h-full object-contain p-4 transition-all duration-500 grayscale-[50%] brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:drop-shadow-[0_0_18px_rgba(250,204,21,0.5)]"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'inline-block';
+                  "
+                />
+                <span
+                  class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform group-hover:drop-shadow-[0_0_12px_rgba(250,204,21,0.5)]"
+                  style="
+                    font-size: 56px;
+                    font-variation-settings: &quot;FILL&quot; 1;
+                    display: none;
+                  "
+                  >terminal</span
+                >
+                <div
+                  class="absolute bottom-3 inset-x-0 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0"
+                >
+                  <span
+                    class="bg-background/90 backdrop-blur border border-primary/30 text-primary font-semibold uppercase text-[9px] tracking-[0.08em] px-3 py-1.5 flex items-center gap-1.5 shadow-[0_0_10px_rgba(0,0,0,0.5)] rounded-full"
+                  >
+                    <span class="material-symbols-outlined text-[11px]"
+                      >visibility</span
+                    >
+                    Click to view
+                  </span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 mb-2">
+                <div
+                  class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"
+                ></div>
+                <span
+                  class="font-semibold uppercase text-[10px] font-bold tracking-[0.06em] text-primary"
+                  >CISCO / OPENEDG PYTHON INSTITUTE</span
+                >
+              </div>
+              <p class="font-bold tracking-tight text-base leading-snug mb-2">
+                Python Essentials 1
+              </p>
+              <span
+                class="font-semibold uppercase text-[10px] text-on-surface-variant"
+                >Issued: Feb 26, 2026</span
+              >
+            </div>
+          </div>
+        </div>
+        <!-- /carousel -->
+      </div>
+      </div>
+      <!-- /cert-carousel-wrapper -->
+      <!-- Unified nav row: [‹] [dots] [›] — same on all screen sizes -->
+      <div class="flex items-center justify-center gap-4 mt-6 pb-8 flex-nowrap">
+        <!-- Prev arrow -->
+        <button
+          id="cert-prev"
+          class="cert-nav-btn flex items-center justify-center w-9 h-9 bg-surface border border-white/10 hover:border-primary text-on-surface-variant hover:text-primary rounded-xl shadow transition-all duration-200 hover:shadow-[0_0_14px_rgba(250,204,21,0.45)] [&.swiper-button-disabled]:opacity-30 [&.swiper-button-disabled]:pointer-events-none shrink-0"
+          aria-label="Previous certificate"
+        >
+          <span class="material-symbols-outlined text-lg leading-none">chevron_left</span>
+        </button>
+
+        <!-- Pagination dots (Swiper injects them here) -->
+        <div
+          class="swiper-pagination !relative !w-auto !bottom-0 flex items-center justify-center gap-2"
+        ></div>
+
+        <!-- Next arrow -->
+        <button
+          id="cert-next"
+          class="cert-nav-btn flex items-center justify-center w-9 h-9 bg-surface border border-white/10 hover:border-primary text-on-surface-variant hover:text-primary rounded-xl shadow transition-all duration-200 hover:shadow-[0_0_14px_rgba(250,204,21,0.45)] [&.swiper-button-disabled]:opacity-30 [&.swiper-button-disabled]:pointer-events-none shrink-0"
+          aria-label="Next certificate"
+        >
+          <span class="material-symbols-outlined text-lg leading-none">chevron_right</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Cert PDF Modal -->
+    <div
+      class="fixed inset-0 z-[500] bg-black/80 backdrop-blur-sm flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300"
+      id="cert-modal"
+      onclick="handleModalClick(event)"
+    >
+      <div
+        id="cert-modal-card"
+        class="bg-[#f9f9f9] w-[95vw] max-w-[900px] p-4 md:p-8 rounded-xl shadow-2xl relative transform scale-95 transition-transform duration-300 flex flex-col items-center"
+      >
+        <button
+          onclick="closeCert()"
+          class="absolute -top-3 -right-3 md:-top-5 md:-right-5 w-9 h-9 md:w-11 md:h-11 bg-white text-black rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform z-50 border border-gray-200"
+          aria-label="Close"
+        >
+          <span
+            class="material-symbols-outlined font-bold text-lg md:text-xl"
+            style="font-variation-settings: &quot;wght&quot; 700"
+            >close</span
+          >
+        </button>
+
+        <!-- Image viewer container -->
+        <div
+          class="w-full flex justify-center items-center bg-white min-h-[55vh] max-h-[65vh] border border-gray-200 shadow-inner rounded overflow-auto p-2"
+        >
+          <!-- Certificate image preview (IDM-safe - no .pdf extension) -->
+          <img
+            id="cert-preview-img"
+            src=""
+            alt="Certificate"
+            class="max-w-full object-contain hidden shadow-lg rounded"
+            style="background: #fff"
+          />
+        </div>
+
+        <!-- Download Original PDF button -->
+        <div class="mt-4 w-full flex justify-center">
+          <a
+            id="cert-download-link"
+            href="#"
+            download
+            class="inline-flex items-center gap-2 px-5 py-2.5 bg-surface border border-primary text-primary font-semibold uppercase text-[11px] tracking-[0.06em] hover:bg-primary hover:text-on-primary transition-all duration-200 rounded"
+          >
+            <span class="material-symbols-outlined text-sm">download</span>
+            Download Original PDF
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
+ ██████ WORK / PROJECTS #work
+ ═══════════════════════════════════════════════════════════ -->
+    <section
+      id="work"
+      class="py-section px-mobile-x md:px-desktop-x max-w-site mx-auto"
+    >
+      <!-- Section header -->
+      <div class="section-label mb-4 reveal">Portfolio</div>
+      <h2
+        class="font-extrabold tracking-[-0.03em] text-4xl md:text-5xl mb-2 reveal"
+      >
+        FEATURED <span class="text-primary">WORK</span>
+      </h2>
+      <p
+        class="font-semibold uppercase text-[11px] tracking-[0.06em] text-on-surface-variant mb-20 reveal"
+        style="transition-delay: 0.08s"
+      >
+        REAL PROJECTS COMING SOON — SWAP OUT PLACEHOLDERS BELOW
+      </p>
+
+      <!-- 2-column grid (1 on mobile) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14">
+        <!-- ──────────────────────────────────────
+ PROJECT CARD 1 — Placeholder
+ ✔ Replace [PROJECT NAME], description, tags & image src
+ ────────────────────────────────────── -->
+        <article class="group relative reveal" style="transition-delay: 0s">
+          <!-- Image area (grayscale → color, scale on hover) -->
+          <div
+            class="aspect-video relative overflow-hidden border border-white/10 group-hover:border-primary/50 transition-colors duration-500"
+          >
+            <!--
+ ✔ TO DO: Replace the placeholder icon below with an <img> tag pointing to
+ your real project screenshot, e.g.:
+ <img src="project1-screenshot.png" alt="[PROJECT NAME]" class="w-full h-full object-cover ..." />
+ -->
+            <div
+              class="w-full h-full bg-surface-container grid-bg flex flex-col items-center justify-center gap-4"
+              aria-label="[Replace with project screenshot]"
+            >
+              <span
+                class="material-symbols-outlined text-primary"
+                style="
+                  font-size: 64px;
+                  font-variation-settings: &quot;FILL&quot; 1;
+                "
+                >smart_toy</span
+              >
+              <span
+                class="font-semibold uppercase text-[10px] text-on-surface-variant tracking-[0.06em]"
+              >
+                [ REPLACE WITH PROJECT IMAGE ]
+              </span>
+            </div>
+            <!-- Hover overlay -->
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            ></div>
+          </div>
+
+          <!-- Card body -->
+          <div class="mt-6">
+            <div class="flex justify-between items-start mb-3">
+              <!-- ✔ Replace [PROJECT NAME] with real project title -->
+              <h3
+                class="font-bold tracking-tight text-xl group-hover:text-primary transition-colors"
+              >
+                [PROJECT NAME]
+              </h3>
+              <!-- ✔ Set href to real project URL or GitHub link -->
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener"
+                aria-label="View project"
+                class="text-primary hover:scale-125 transition-transform"
+              >
+                <span class="material-symbols-outlined text-xl"
+                  >open_in_new</span
+                >
+              </a>
+            </div>
+            <!-- ✔ Replace description below (1-2 sentences: what it does + tools used) -->
+            <p class="text-sm text-on-surface-variant mb-5 leading-relaxed">
+              [1–2 sentence description of what this project does and what
+              tools/languages you used to build it.]
+            </p>
+            <!-- ✔ Replace tags below with your real tech stack -->
+            <div class="flex flex-wrap gap-3">
+              <span
+                class="font-semibold uppercase text-[11px] font-bold text-primary"
+                >#Python</span
+              >
+              <span
+                class="font-semibold uppercase text-[11px] font-bold text-primary"
+                >#AI</span
+              >
+            </div>
+          </div>
+        </article>
+
+        <!-- ──────────────────────────────────────
+ PROJECT CARD 2 — Placeholder
+ ✔ Replace [PROJECT NAME], description, tags & image src
+ ────────────────────────────────────── -->
+        <article class="group relative reveal" style="transition-delay: 0.12s">
+          <!-- Image area -->
+          <div
+            class="aspect-video relative overflow-hidden border border-white/10 group-hover:border-primary/50 transition-colors duration-500"
+          >
+            <div
+              class="w-full h-full bg-surface-container grid-bg flex flex-col items-center justify-center gap-4"
+              aria-label="[Replace with project screenshot]"
+            >
+              <span
+                class="material-symbols-outlined text-primary"
+                style="
+                  font-size: 64px;
+                  font-variation-settings: &quot;FILL&quot; 1;
+                "
+                >database</span
+              >
+              <span
+                class="font-semibold uppercase text-[10px] text-on-surface-variant tracking-[0.06em]"
+              >
+                [ REPLACE WITH PROJECT IMAGE ]
+              </span>
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            ></div>
+          </div>
+
+          <!-- Card body -->
+          <div class="mt-6">
+            <div class="flex justify-between items-start mb-3">
+              <h3
+                class="font-bold tracking-tight text-xl group-hover:text-primary transition-colors"
+              >
+                [PROJECT NAME]
+              </h3>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener"
+                aria-label="View project"
+                class="text-primary hover:scale-125 transition-transform"
+              >
+                <span class="material-symbols-outlined text-xl"
+                  >open_in_new</span
+                >
+              </a>
+            </div>
+            <p class="text-sm text-on-surface-variant mb-5 leading-relaxed">
+              [1–2 sentence description of what this project does and what
+              tools/languages you used to build it.]
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <span
+                class="font-semibold uppercase text-[11px] font-bold text-primary"
+                >#DataScience</span
+              >
+            </div>
+          </div>
+        </article>
+      </div>
+      <!-- /grid -->
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+ ██████ CONTACT #contact
+ ═══════════════════════════════════════════════════════════ -->
+    <section
+      id="contact"
+      class="py-section px-mobile-x md:px-desktop-x max-w-site mx-auto"
+    >
+      <div class="grid md:grid-cols-2 gap-16 lg:gap-24 items-start">
+        <!-- ── LEFT: Info column ── -->
+        <div class="reveal from-left">
+          <div class="section-label mb-4">Get In Touch</div>
+
+          <!-- Heading with yellow underline on SOMETHING -->
+          <h2
+            class="font-extrabold tracking-[-0.03em] leading-[0.95] mb-8"
+            style="font-size: clamp(38px, 5.5vw, 60px)"
+          >
+            LET'S BUILD<br />
+            <span
+              class="text-primary"
+              style="
+                text-decoration: underline;
+                text-decoration-thickness: 4px;
+                text-underline-offset: 12px;
+              "
+              >SOMETHING</span
+            >
+          </h2>
+
+          <p
+            class="text-[15px] text-on-surface-variant mb-12 leading-relaxed max-w-sm"
+          >
+            Open to internships, freelance projects, and learning opportunities
+            in AI, data, and software development. Reach out below.
+          </p>
+
+          <!-- Contact rows -->
+          <div class="space-y-7">
+            <!-- Email -->
+            <a
+              href="mailto:muhmmadumairkashif@gmail.com"
+              class="flex items-center gap-5 group"
+            >
+              <div
+                class="w-12 h-12 bg-primary flex items-center justify-center text-on-primary group-hover:scale-110 transition-transform line-glow shrink-0"
+              >
+                <span class="material-symbols-outlined text-lg">mail</span>
+              </div>
+              <div>
+                <p
+                  class="font-semibold uppercase text-[10px] font-bold tracking-[0.06em] text-on-surface-variant"
+                >
+                  EMAIL
+                </p>
+                <p
+                  class="font-bold tracking-tight text-base group-hover:text-primary transition-colors break-all"
+                >
+                  muhmmadumairkashif@gmail.com
+                </p>
+              </div>
+            </a>
+
+            <!-- Phone -->
+            <a href="tel:+923358379777" class="flex items-center gap-5 group">
+              <div
+                class="w-12 h-12 border border-primary flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-all shrink-0"
+              >
+                <span class="material-symbols-outlined text-lg">phone</span>
+              </div>
+              <div>
+                <p
+                  class="font-semibold uppercase text-[10px] font-bold tracking-[0.06em] text-on-surface-variant"
+                >
+                  PHONE
+                </p>
+                <p
+                  class="font-bold tracking-tight text-base group-hover:text-primary transition-colors"
+                >
+                  0335-8379777
+                </p>
+              </div>
+            </a>
+
+            <!-- Location -->
+            <div class="flex items-center gap-5">
+              <div
+                class="w-12 h-12 border border-primary flex items-center justify-center text-primary shrink-0"
+              >
+                <span class="material-symbols-outlined text-lg"
+                  >location_on</span
+                >
+              </div>
+              <div>
+                <p
+                  class="font-semibold uppercase text-[10px] font-bold tracking-[0.06em] text-on-surface-variant"
+                >
+                  LOCATION
+                </p>
+                <p class="font-bold tracking-tight text-base">
+                  Faisalabad, Pakistan
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- /contact rows -->
+        </div>
+        <!-- /left -->
+
+        <!-- ── RIGHT: Contact Form ── -->
+        <!-- NOTE: No backend yet — connect to Formspree or an API route later -->
+        <form
+          id="contact-form"
+          onsubmit="handleForm(event)"
+          class="glass-card p-8 md:p-10 space-y-8 relative reveal from-right"
+          style="transition-delay: 0.1s"
+        >
+          <!-- Accent bar -->
+          <div
+            class="absolute top-0 left-0 w-[3px] h-full bg-primary line-glow"
+          ></div>
+
+          <!-- Name -->
+          <div class="fl-group relative">
+            <input
+              type="text"
+              id="f-name"
+              name="name"
+              placeholder=" "
+              required
+              class="w-full bg-transparent border-0 border-b-2 border-white/10 pt-6 pb-2 outline-none focus:border-primary peer text-white text-base transition-colors"
+            />
+            <label
+              for="f-name"
+              class="absolute left-0 top-6 text-on-surface-variant font-semibold uppercase text-[11px] font-bold tracking-[0.06em]"
+            >
+              FULL NAME
+            </label>
+          </div>
+
+          <!-- Email -->
+          <div class="fl-group relative">
+            <input
+              type="email"
+              id="f-email"
+              name="email"
+              placeholder=" "
+              required
+              class="w-full bg-transparent border-0 border-b-2 border-white/10 pt-6 pb-2 outline-none focus:border-primary peer text-white text-base transition-colors"
+            />
+            <label
+              for="f-email"
+              class="absolute left-0 top-6 text-on-surface-variant font-semibold uppercase text-[11px] font-bold tracking-[0.06em]"
+            >
+              EMAIL ADDRESS
+            </label>
+          </div>
+
+          <!-- Message -->
+          <div class="fl-group relative">
+            <textarea
+              id="f-msg"
+              name="message"
+              placeholder=" "
+              rows="5"
+              required
+              class="w-full bg-transparent border-0 border-b-2 border-white/10 pt-6 pb-2 outline-none focus:border-primary peer text-white text-base transition-colors resize-none"
+            ></textarea>
+            <label
+              for="f-msg"
+              class="absolute left-0 top-6 text-on-surface-variant font-semibold uppercase text-[11px] font-bold tracking-[0.06em]"
+            >
+              MESSAGE
+            </label>
+          </div>
+
+          <!-- Submit -->
+          <button
+            type="submit"
+            id="form-btn"
+            class="w-full bg-primary text-on-primary py-5 font-semibold uppercase text-[11px] font-bold tracking-[.18em] uppercase flex items-center justify-center gap-2 transition-all hover:bg-white hover:text-black hover:shadow-[0_0_40px_rgba(250,204,21,0.40)] active:scale-[0.98]"
+          >
+            <span class="material-symbols-outlined text-base">send</span>
+            SEND MESSAGE
+          </button>
+
+          <!-- Success state (shown after submit) -->
+          <div
+            id="form-ok"
+            class="hidden text-center py-4 border border-primary/30 bg-primary/5"
+          >
+            <span
+              class="material-symbols-outlined text-primary text-2xl block mb-1"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >check_circle</span
+            >
+            <p
+              class="font-semibold uppercase text-[10px] font-bold tracking-[0.06em] text-primary"
+            >
+              MESSAGE SENT SUCCESSFULLY
+            </p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+ FOOTER
+ ═══════════════════════════════════════════════════════════ -->
+    <footer
+      class="w-full py-12 bg-surface-container-lowest border-t-2 border-primary"
+      style="box-shadow: 0 -1px 32px rgba(250, 204, 21, 0.08)"
+    >
+      <div
+        class="max-w-site mx-auto px-mobile-x md:px-desktop-x flex flex-col md:flex-row items-center justify-between gap-6"
+      >
+        <!-- Left: Logo + pulse dot -->
+        <div class="flex items-center gap-2.5">
+          <span
+            class="font-extrabold tracking-[-0.03em] text-xl text-primary tracking-tighter"
+            >UMAIR.K</span
+          >
+          <div
+            class="w-2 h-2 rounded-full bg-primary"
+            style="
+              animation: blink 1.3s ease-in-out infinite;
+              box-shadow: 0 0 8px #facc15;
+            "
+          ></div>
+        </div>
+
+        <!-- Center: copyright -->
+        <p
+          class="font-semibold uppercase text-[10px] font-bold tracking-[0.06em] text-on-surface-variant text-center"
+        >
+          © 2026 MUHAMMAD UMAIR KASHIF. ALL RIGHTS RESERVED.
+        </p>
+
+        <!-- Right: Links (hover-slide) -->
+        <div class="flex gap-6">
+          <!-- ✔ Replace href with your real LinkedIn URL -->
+          <a
+            href="https://linkedin.com/in/YOUR-LINKEDIN-ID"
+            target="_blank"
+            rel="noopener"
+            class="font-semibold uppercase text-[11px] text-on-surface-variant relative overflow-hidden group inline-block"
+          >
+            <span
+              class="inline-block transition-transform duration-300 group-hover:-translate-y-full"
+              >LinkedIn</span
+            >
+            <span
+              class="absolute inset-0 flex items-center justify-center text-primary translate-y-full transition-transform duration-300 group-hover:translate-y-0"
+              >LinkedIn</span
+            >
+          </a>
+          <!-- ✔ Replace href with your real GitHub URL -->
+          <a
+            href="https://github.com/YOUR-GITHUB-ID"
+            target="_blank"
+            rel="noopener"
+            class="font-semibold uppercase text-[11px] text-on-surface-variant relative overflow-hidden group inline-block"
+          >
+            <span
+              class="inline-block transition-transform duration-300 group-hover:-translate-y-full"
+              >GitHub</span
+            >
+            <span
+              class="absolute inset-0 flex items-center justify-center text-primary translate-y-full transition-transform duration-300 group-hover:translate-y-0"
+              >GitHub</span
+            >
+          </a>
+          <a
+            href="resume.html"
+            target="_blank"
+            class="font-semibold uppercase text-[11px] text-on-surface-variant relative overflow-hidden group inline-block"
+          >
+            <span
+              class="inline-block transition-transform duration-300 group-hover:-translate-y-full"
+              >Résumé</span
+            >
+            <span
+              class="absolute inset-0 flex items-center justify-center text-primary translate-y-full transition-transform duration-300 group-hover:translate-y-0"
+              >Résumé</span
+            >
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button
+      id="back-top"
+      aria-label="Back to top"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+      class="fixed bottom-7 right-6 w-12 h-12 bg-primary text-on-primary z-40 flex items-center justify-center line-glow opacity-0 pointer-events-none transition-all duration-300 hover:scale-110"
+    >
+      <span class="material-symbols-outlined text-lg">arrow_upward</span>
+    </button>
+
+    <!-- ═══════════════════════════════════════════════════════
+ JAVASCRIPT
+ ═══════════════════════════════════════════════════════════ -->
+    <script src="js/main.js?v=15" defer></script>
+  </body>
+</html>
