@@ -11,5 +11,8 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Node (if ever added)
+# Node
 node_modules/
+
+# Generated Tailwind CSS (built by Vercel during deployment)
+css/tailwind.output.css
