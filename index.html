@@ -375,21 +375,9 @@
           class="flex items-center gap-4 mt-4 md:mt-0 reveal order-3 md:col-start-1 md:row-start-2"
           style="transition-delay: 0.34s"
         >
+
           <a
-            href="https://github.com"
-            target="_blank"
-            rel="noopener"
-            aria-label="GitHub profile"
-            class="w-9 h-9 border border-white/10 flex items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-all duration-200 hover:scale-110 hover:line-glow"
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.8 2.6 1.3 3.3 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"
-              />
-            </svg>
-          </a>
-          <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/muhammad-umair-kashif-59bbb3297"
             target="_blank"
             rel="noopener"
             aria-label="LinkedIn profile"
@@ -402,7 +390,7 @@
             </svg>
           </a>
           <a
-            href="mailto:hello@umair.k"
+            href="mailto:muhmmadumairkashif@gmail.com"
             aria-label="Send email"
             class="w-9 h-9 border border-white/10 flex items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-all duration-200 hover:scale-110 hover:line-glow"
           >
@@ -414,10 +402,12 @@
           <!-- Thin divider -->
           <div class="w-px h-7 bg-white/10 mx-1"></div>
 
-          <!-- Resume button — animated border, uses dedicated viewer to bypass IDM -->
+          <!-- Resume button — animated border, uses direct PDF path with blob fallback -->
           <a
-            href="resume.html"
+            href="assets/documents/cv/Muhammad_Umair_Kashif_Resume.pdf"
             target="_blank"
+            rel="noopener"
+            onclick="if(typeof openResumeBlob === 'function') openResumeBlob(event, this.getAttribute('href'))"
             class="resume-btn"
           >
             <span class="material-symbols-outlined" style="font-size:14px">description</span>
@@ -541,18 +531,14 @@
               class="w-full h-[460px] object-cover object-top grayscale hover:grayscale-0 brightness-90 transition-all duration-700"
             />
           </div>
-          <!-- Years badge -->
+          <!-- Cisco Certified badge -->
           <div
-            class="absolute -bottom-8 -right-4 md:-right-8 w-[130px] h-[130px] bg-surface border-2 border-primary flex flex-col items-center justify-center line-glow z-10"
+            class="absolute -bottom-8 -right-4 md:-right-8 w-[130px] h-[130px] bg-surface border-2 border-primary flex flex-col items-center justify-center line-glow z-10 p-2 text-center"
           >
+            <span class="material-symbols-outlined text-primary text-3xl mb-1" style="font-variation-settings: 'FILL' 1">verified</span>
             <span
-              class="font-extrabold tracking-[-0.03em] text-4xl text-primary counter"
-              data-target="3"
-              >0</span
-            >
-            <span
-              class="font-semibold uppercase text-[9px] font-bold tracking-[0.06em] text-on-surface-variant text-center mt-1"
-              >YEARS<br />EXP</span
+              class="font-extrabold tracking-tight text-xs text-white leading-tight"
+              >CISCO<br /><span class="text-primary">CERTIFIED</span></span
             >
           </div>
           <!-- Corner accents -->
@@ -601,29 +587,29 @@
               >
               <span
                 class="font-semibold uppercase text-[9px] font-bold tracking-[0.06em] text-on-surface-variant mt-1 block"
-                >PROJECTS</span
-              >
-            </div>
-            <div class="glass-card p-5 border-t-2 border-primary text-center">
-              <span
-                class="font-extrabold tracking-[-0.03em] text-3xl text-white block counter"
-                data-target="10"
-                >0</span
-              >
-              <span
-                class="font-semibold uppercase text-[9px] font-bold tracking-[0.06em] text-on-surface-variant mt-1 block"
                 >CERTS</span
               >
             </div>
             <div class="glass-card p-5 border-t-2 border-primary text-center">
               <span
                 class="font-extrabold tracking-[-0.03em] text-3xl text-white block counter"
-                data-target="8"
+                data-target="6"
                 >0</span
               >
               <span
                 class="font-semibold uppercase text-[9px] font-bold tracking-[0.06em] text-on-surface-variant mt-1 block"
-                >STACKS</span
+                >SKILLS</span
+              >
+            </div>
+            <div class="glass-card p-5 border-t-2 border-primary text-center">
+              <span
+                class="font-extrabold tracking-[-0.03em] text-3xl text-white block counter"
+                data-target="4"
+                >0</span
+              >
+              <span
+                class="font-semibold uppercase text-[9px] font-bold tracking-[0.06em] text-on-surface-variant mt-1 block"
+                >PROJECTS</span
               >
             </div>
           </div>
@@ -1946,9 +1932,9 @@
 
         <!-- Right: Links (hover-slide) -->
         <div class="flex gap-6">
-          <!-- ✔ Replace href with your real LinkedIn URL -->
+          <!-- ✔ LinkedIn URL -->
           <a
-            href="https://linkedin.com/in/YOUR-LINKEDIN-ID"
+            href="https://www.linkedin.com/in/muhammad-umair-kashif-59bbb3297"
             target="_blank"
             rel="noopener"
             class="font-semibold uppercase text-[11px] text-on-surface-variant relative overflow-hidden group inline-block"
@@ -1962,25 +1948,12 @@
               >LinkedIn</span
             >
           </a>
-          <!-- ✔ Replace href with your real GitHub URL -->
+
           <a
-            href="https://github.com/YOUR-GITHUB-ID"
+            href="assets/documents/cv/Muhammad_Umair_Kashif_Resume.pdf"
             target="_blank"
             rel="noopener"
-            class="font-semibold uppercase text-[11px] text-on-surface-variant relative overflow-hidden group inline-block"
-          >
-            <span
-              class="inline-block transition-transform duration-300 group-hover:-translate-y-full"
-              >GitHub</span
-            >
-            <span
-              class="absolute inset-0 flex items-center justify-center text-primary translate-y-full transition-transform duration-300 group-hover:translate-y-0"
-              >GitHub</span
-            >
-          </a>
-          <a
-            href="resume.html"
-            target="_blank"
+            onclick="if(typeof openResumeBlob === 'function') openResumeBlob(event, this.getAttribute('href'))"
             class="font-semibold uppercase text-[11px] text-on-surface-variant relative overflow-hidden group inline-block"
           >
             <span

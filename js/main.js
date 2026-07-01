@@ -125,12 +125,12 @@ function triggerCounter(el) {
   el._done = true;
   const target = +el.dataset.target;
   let cur = 0;
-  const step = Math.max(1, Math.ceil(target / 45));
+  const step = Math.max(1, Math.ceil(target / 30));
   const id = setInterval(() => {
     cur = Math.min(cur + step, target);
     el.textContent = cur;
     if (cur >= target) clearInterval(id);
-  }, 26);
+  }, 40);
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -152,6 +152,17 @@ const revObs = new IntersectionObserver(
   { threshold: 0.12 },
 );
 document.querySelectorAll(".reveal").forEach((el) => revObs.observe(el));
+
+// Dedicated observer for counters to guarantee they animate when visible
+const counterObs = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) triggerCounter(e.target);
+    });
+  },
+  { threshold: 0.1 },
+);
+document.querySelectorAll(".counter").forEach((el) => counterObs.observe(el));
 
 // Also watch the skills section so bars animate even if card reveals already fired
 const skillsSection = document.getElementById("skills");
@@ -243,6 +254,28 @@ const $modal = document.getElementById('cert-modal');
 const $modalCard = document.getElementById('cert-modal-card');
 const $previewImg = document.getElementById('cert-preview-img');
 const $downloadLink = document.getElementById('cert-download-link');
+
+// Blob workaround for Resume PDF to bypass IDM interception
+window.openResumeBlob = async function (e, url) {
+  e.preventDefault();
+  const tab = window.open('', '_blank');
+  if (tab) {
+    tab.document.write('<title>Loading Résumé...</title><div style="font-family:sans-serif;text-align:center;padding:50px;color:#888;">Loading Résumé...</div>');
+  }
+  try {
+    const res = await fetch(url);
+    const blob = await res.blob();
+    const blobUrl = URL.createObjectURL(blob);
+    if (tab) {
+      tab.location.href = blobUrl;
+    } else {
+      window.open(blobUrl, '_blank');
+    }
+  } catch (err) {
+    if (tab) tab.location.href = url;
+    else window.open(url, '_blank');
+  }
+};
 
 window.openCert = function (imgFile, pdfFile) {
   // imgFile = path to .jpg preview, pdfFile = path to .pdf for download
