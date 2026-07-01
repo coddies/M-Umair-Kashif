@@ -1769,50 +1769,59 @@
         <!-- ── LEFT: Info column ── -->
         <div class="reveal from-left">
           <!-- Small yellow eyebrow with custom horizontal line -->
-          <div class="flex items-center gap-3 text-primary font-mono text-xs tracking-wider mb-4">
-            <span class="w-8 h-[1px] bg-primary"></span>
+          <div class="flex items-center gap-3 text-primary font-bold uppercase text-[10px] md:text-xs tracking-[0.1em] mb-5">
+            <span class="w-8 h-[2px] bg-primary"></span>
             <span>GET IN TOUCH</span>
           </div>
 
           <!-- Heading with yellow underline on SOMETHING -->
           <h2
-            class="font-extrabold tracking-[-0.03em] leading-[0.95] mb-8 text-white"
+            class="font-extrabold tracking-[-0.03em] leading-[1.0] text-white mb-6"
             style="font-size: clamp(38px, 5.5vw, 60px)"
           >
             LET'S BUILD<br />
-            <span class="text-primary">SOMETHING</span>
+            <span class="text-primary border-b-[5px] border-primary pb-1 inline-block">SOMETHING</span>
           </h2>
 
-          <!-- Terminal Block -->
-          <div class="bg-[#0d0d0d] border border-yellow-400/20 p-5 font-mono text-xs md:text-sm space-y-4 leading-relaxed relative overflow-hidden mb-6">
-            <div class="text-primary text-[10px] md:text-xs mb-2 tracking-wider">// TERMINAL OUTPUT</div>
-            <div>
-              <span class="text-primary">❯ </span>
-              <span class="text-on-surface-variant">location: </span>
-              <span class="text-white">"Faisalabad, Pakistan"</span>
+          <p class="text-[14px] md:text-[15px] text-on-surface-variant leading-relaxed max-w-sm mb-12">
+            Open to internships, freelance projects, and learning opportunities. Reach out — I respond within 24 hours.
+          </p>
+
+          <!-- Contact Blocks -->
+          <div class="space-y-6">
+            <!-- Email Block -->
+            <div class="flex items-center gap-5">
+              <div class="w-[52px] h-[52px] bg-primary flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-white" style="font-size: 22px; font-variation-settings: 'FILL' 1;">mail</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest mb-0.5">EMAIL</span>
+                <a href="mailto:muhmmadumairkashif@gmail.com" class="text-white font-medium text-[13px] hover:text-primary transition-colors">muhmmadumairkashif@gmail.com</a>
+              </div>
             </div>
-            <div>
-              <span class="text-primary">❯ </span>
-              <span class="text-on-surface-variant">email: </span>
-              <a href="mailto:muhmmadumairkashif@gmail.com" class="text-white hover:text-primary transition-colors underline decoration-primary/40 break-all">"muhmmadumairkashif@gmail.com"</a>
+
+            <!-- Phone Block -->
+            <div class="flex items-center gap-5">
+              <div class="w-[52px] h-[52px] bg-transparent border border-primary flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-primary" style="font-size: 22px; font-variation-settings: 'FILL' 1;">call</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest mb-0.5">PHONE</span>
+                <a href="tel:+923358379777" class="text-white font-medium text-[13px] hover:text-primary transition-colors">0335-8379777</a>
+              </div>
             </div>
-            <div>
-              <span class="text-primary">❯ </span>
-              <span class="text-on-surface-variant">phone: </span>
-              <a href="tel:+923358379777" class="text-white hover:text-primary transition-colors underline decoration-primary/40">"0335 - 8379 - 777"</a>
-            </div>
-            <div>
-              <span class="text-primary">❯ </span>
-              <span class="text-on-surface-variant">status: </span>
-              <span class="text-[#4ade80]">"AVAILABLE_FOR_WORK"</span>
-              <span class="text-primary terminal-cursor ml-1 font-bold">█</span>
+
+            <!-- Location Block -->
+            <div class="flex items-center gap-5">
+              <div class="w-[52px] h-[52px] bg-transparent border border-primary flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-primary" style="font-size: 22px;">radio_button_checked</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest mb-0.5">LOCATION</span>
+                <span class="text-white font-medium text-[13px]">Faisalabad, Pakistan</span>
+              </div>
             </div>
           </div>
-
-          <!-- Short description paragraph below -->
-          <p class="text-[14px] text-on-surface-variant leading-relaxed max-w-sm">
-            Open to internships, freelance projects, and learning opportunities in AI, data, and software development. Reach out below.
-          </p>
         </div>
         <!-- /left -->
 
@@ -1820,97 +1829,81 @@
         <form
           id="contact-form"
           onsubmit="handleForm(event)"
-          class="bg-[#0d0d0d] border border-yellow-400/20 border-l-[3px] border-l-primary p-6 sm:p-8 md:p-10 space-y-8 relative reveal from-right"
+          class="bg-[#0f0f0f] border border-white/5 border-l-[3px] border-l-primary p-8 sm:p-10 space-y-8 relative reveal from-right"
           style="transition-delay: 0.1s"
         >
           <!-- Honeypot field for bot spam prevention -->
           <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
-          <!-- Top bar like terminal window titlebar -->
-          <div class="flex items-center justify-between border-b border-yellow-400/10 pb-4 mb-6">
-            <span class="font-mono text-primary text-[10px] uppercase tracking-wider font-bold">// TERMINAL COMMAND</span>
-            <div class="flex gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-white/20"></span>
-              <span class="w-2 h-2 rounded-full bg-white/20"></span>
-              <span class="w-2 h-2 rounded-full bg-primary/80"></span>
-            </div>
-          </div>
 
           <!-- Name -->
           <div>
             <label
               for="f-name"
-              class="block font-mono text-primary text-[10px] md:text-xs font-bold tracking-[0.08em] mb-2"
+              class="block text-primary text-[10px] font-extrabold tracking-[0.1em] mb-2 uppercase"
             >
-              // YOUR NAME
+              FULL NAME
             </label>
-            <div class="relative flex items-center">
-              <span class="absolute left-0 font-mono text-primary select-none">❯</span>
-              <input
-                type="text"
-                id="f-name"
-                name="name"
-                placeholder="Enter your name..."
-                required
-                class="pl-6 w-full bg-[#050505] border-0 border-b-2 border-primary/20 pb-2 outline-none focus:border-primary text-white text-base transition-colors terminal-input placeholder-white/20 font-mono"
-              />
-            </div>
+            <input
+              type="text"
+              id="f-name"
+              name="name"
+              placeholder="Your name"
+              required
+              class="w-full bg-transparent border-0 border-b border-white/10 pb-3 outline-none focus:border-primary text-white text-sm transition-colors placeholder-white/30"
+            />
           </div>
 
           <!-- Email -->
           <div>
             <label
               for="f-email"
-              class="block font-mono text-primary text-[10px] md:text-xs font-bold tracking-[0.08em] mb-2"
+              class="block text-primary text-[10px] font-extrabold tracking-[0.1em] mb-2 uppercase"
             >
-              // YOUR EMAIL
+              EMAIL ADDRESS
             </label>
-            <div class="relative flex items-center">
-              <span class="absolute left-0 font-mono text-primary select-none">❯</span>
-              <input
-                type="email"
-                id="f-email"
-                name="email"
-                placeholder="Enter your email address..."
-                required
-                class="pl-6 w-full bg-[#050505] border-0 border-b-2 border-primary/20 pb-2 outline-none focus:border-primary text-white text-base transition-colors terminal-input placeholder-white/20 font-mono"
-              />
-            </div>
+            <input
+              type="email"
+              id="f-email"
+              name="email"
+              placeholder="your@email.com"
+              required
+              class="w-full bg-transparent border-0 border-b border-white/10 pb-3 outline-none focus:border-primary text-white text-sm transition-colors placeholder-white/30"
+            />
           </div>
 
           <!-- Message -->
           <div>
             <label
               for="f-msg"
-              class="block font-mono text-primary text-[10px] md:text-xs font-bold tracking-[0.08em] mb-2"
+              class="block text-primary text-[10px] font-extrabold tracking-[0.1em] mb-2 uppercase"
             >
-              // YOUR MESSAGE
+              MESSAGE
             </label>
-            <div class="relative flex items-start">
-              <span class="absolute left-0 top-1 font-mono text-primary select-none">❯</span>
-              <textarea
-                id="f-msg"
-                name="message"
-                placeholder="Enter your message..."
-                rows="5"
-                required
-                class="pl-6 w-full bg-[#050505] border-0 border-b-2 border-primary/20 pb-2 outline-none focus:border-primary text-white text-base transition-colors resize-none terminal-input placeholder-white/20 font-mono"
-              ></textarea>
-            </div>
+            <textarea
+              id="f-msg"
+              name="message"
+              placeholder="Tell me about your project..."
+              rows="4"
+              required
+              class="w-full bg-transparent border-0 border-b border-white/10 pb-3 outline-none focus:border-primary text-white text-sm transition-colors resize-none placeholder-white/30"
+            ></textarea>
           </div>
 
           <!-- Submit -->
-          <button
-            type="submit"
-            id="form-btn"
-            class="w-full bg-primary text-black py-5 font-mono text-[11px] font-extrabold tracking-[.18em] uppercase flex items-center justify-center transition-all hover:bg-white hover:text-black hover:shadow-[0_0_40px_rgba(250,204,21,0.40)] active:scale-[0.98]"
-          >
-            ❯ TRANSMIT MESSAGE
-          </button>
+          <div class="pt-2">
+            <button
+              type="submit"
+              id="form-btn"
+              class="bg-primary text-black px-7 py-3.5 font-bold text-[11px] tracking-[.15em] uppercase inline-flex items-center justify-center transition-all hover:bg-white hover:text-black hover:shadow-[0_0_24px_rgba(250,204,21,0.30)] active:scale-[0.98] rounded-md"
+            >
+              SEND MESSAGE &rarr;
+            </button>
+          </div>
 
           <!-- Success state (shown after submit) -->
           <div
             id="form-ok"
-            class="hidden text-center py-4 border border-primary/30 bg-primary/5 animate-pulse"
+            class="hidden text-center py-4 border border-primary/30 bg-primary/5 rounded-md animate-pulse mt-4"
           >
             <span
               class="material-symbols-outlined text-primary text-2xl block mb-1"
@@ -1921,16 +1914,6 @@
               class="font-semibold uppercase text-[10px] font-bold tracking-[0.06em] text-primary"
             >
               MESSAGE SENT SUCCESSFULLY
-            </p>
-          </div>
-
-          <!-- Muted response & privacy info -->
-          <div class="space-y-2 mt-4 text-center">
-            <p class="font-mono text-center text-[10px] md:text-xs text-on-surface-variant opacity-60">
-              // Response within 24 hours
-            </p>
-            <p class="font-mono text-center text-[9px] md:text-[10px] text-on-surface-variant opacity-45 max-w-xs mx-auto leading-normal">
-              // Your information is only used to respond to your message and is never shared with third parties.
             </p>
           </div>
         </form>
