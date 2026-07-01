@@ -802,4 +802,11 @@ body.preloader-active {
   animation: cursor-blink 1.2s step-end infinite;
 }
 
+@media (max-width: 1023px) {
+  .photo-img {
+    filter: grayscale(0%) brightness(0.95) contrast(1.02) !important;
+  }
+}
+
+
 
