@@ -347,7 +347,7 @@
         <!-- ══════════════════════════════════════
  LEFT COLUMN
  ══════════════════════════════════════ -->
-        <div class="flex flex-col order-2 md:order-1">
+        <div class="flex flex-col order-2 md:order-1 items-center text-center md:items-start md:text-left">
           <!-- Status pill -->
           <div class="section-label mb-7 reveal">Available for Work</div>
 
@@ -364,7 +364,7 @@
 
           <!-- ── Typing animation line ── -->
           <div
-            class="flex items-center gap-2.5 mb-8 reveal"
+            class="flex items-center justify-center md:justify-start gap-2.5 mb-8 reveal"
             style="transition-delay: 0.13s"
             aria-live="polite"
           >
@@ -406,7 +406,7 @@
 
           <!-- ── CTA Buttons ── -->
           <div
-            class="flex flex-wrap gap-4 reveal"
+            class="flex flex-wrap justify-center md:justify-start gap-4 reveal"
             style="transition-delay: 0.27s"
           >
             <!-- Filled yellow — primary action -->
@@ -437,7 +437,7 @@
 
         <!-- ── Social icon strip ── -->
         <div
-          class="flex items-center gap-4 mt-4 md:mt-0 reveal order-3 md:col-start-1 md:row-start-2"
+          class="flex items-center justify-center md:justify-start w-full gap-4 mt-4 md:mt-0 reveal order-3 md:col-start-1 md:row-start-2"
           style="transition-delay: 0.34s"
         >
 
@@ -616,14 +616,14 @@
         </div>
 
         <!-- Text -->
-        <div class="reveal from-right" style="transition-delay: 0.1s">
-          <div class="section-label mb-4">Who I Am</div>
+        <div class="reveal from-right flex flex-col items-center text-center md:items-start md:text-left" style="transition-delay: 0.1s">
+          <div class="section-label mb-4 mx-auto md:mx-0">Who I Am</div>
           <h2
             class="font-extrabold tracking-[-0.03em] text-4xl md:text-5xl mb-3 leading-tight"
           >
             ABOUT THE<br /><span class="text-primary">ENGINEER</span>
           </h2>
-          <div class="w-20 h-[3px] bg-primary mb-8 line-glow"></div>
+          <div class="w-20 h-[3px] bg-primary mb-8 line-glow mx-auto md:mx-0"></div>
 
           <p class="text-[17px] text-on-surface-variant mb-5 leading-relaxed">
             I'm
@@ -949,11 +949,11 @@
  ═══════════════════════════════════════════════════════════ -->
     <section id="certs" class="py-28 overflow-hidden">
       <div class="max-w-[1280px] mx-auto px-4 md:px-16 mb-14">
-        <div class="section-label mb-4 reveal">Credentials</div>
+        <div class="section-label mb-4 reveal mx-auto md:mx-0 flex justify-center md:justify-start">Credentials</div>
         <div
           class="flex flex-col md:flex-row md:items-end justify-between gap-6"
         >
-          <div>
+          <div class="flex flex-col items-center text-center md:items-start md:text-left w-full">
             <h2
               class="font-extrabold tracking-[-0.03em] text-4xl md:text-5xl mb-2 reveal"
             >
@@ -1596,18 +1596,20 @@
       class="pt-24 pb-28 px-4 md:px-16 max-w-[1280px] mx-auto"
     >
       <!-- Section header -->
-      <div class="section-label mb-4 reveal">Portfolio</div>
-      <h2
-        class="font-extrabold tracking-[-0.03em] text-4xl md:text-5xl mb-2 reveal"
-      >
-        FEATURED <span class="text-primary">WORK</span>
-      </h2>
-      <p
-        class="font-semibold uppercase text-[11px] tracking-[0.06em] text-on-surface-variant mb-20 reveal"
-        style="transition-delay: 0.08s"
-      >
-        REAL PROJECTS COMING SOON — SWAP OUT PLACEHOLDERS BELOW
-      </p>
+      <div class="flex flex-col items-center text-center md:items-start md:text-left w-full">
+        <div class="section-label mb-4 reveal mx-auto md:mx-0">Portfolio</div>
+        <h2
+          class="font-extrabold tracking-[-0.03em] text-4xl md:text-5xl mb-2 reveal"
+        >
+          FEATURED <span class="text-primary">WORK</span>
+        </h2>
+        <p
+          class="font-semibold uppercase text-[11px] tracking-[0.06em] text-on-surface-variant mb-20 reveal"
+          style="transition-delay: 0.08s"
+        >
+          REAL PROJECTS COMING SOON — SWAP OUT PLACEHOLDERS BELOW
+        </p>
+      </div>
 
       <!-- 2-column grid (1 on mobile) -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14">
@@ -1650,8 +1652,8 @@
           </div>
 
           <!-- Card body -->
-          <div class="mt-6">
-            <div class="flex justify-between items-start mb-3">
+          <div class="mt-6 flex flex-col items-center text-center md:items-start md:text-left">
+            <div class="flex justify-center md:justify-between items-start mb-3 w-full relative">
               <!-- ✔ Replace [PROJECT NAME] with real project title -->
               <h3
                 class="font-bold tracking-tight text-xl group-hover:text-primary transition-colors"
@@ -1664,7 +1666,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="View project"
-                class="text-primary hover:scale-125 transition-transform"
+                class="text-primary hover:scale-125 transition-transform absolute right-0 md:relative"
               >
                 <span class="material-symbols-outlined text-xl"
                   >open_in_new</span
@@ -1677,7 +1679,7 @@
               tools/languages you used to build it.]
             </p>
             <!-- ✔ Replace tags below with your real tech stack -->
-            <div class="flex flex-wrap gap-3">
+            <div class="flex flex-wrap justify-center md:justify-start gap-3 w-full">
               <span
                 class="font-semibold uppercase text-[11px] font-bold text-primary"
                 >#Python</span
@@ -1767,9 +1769,9 @@
     >
       <div class="grid md:grid-cols-2 gap-16 lg:gap-24 items-start">
         <!-- ── LEFT: Info column ── -->
-        <div class="reveal from-left">
+        <div class="reveal from-left flex flex-col items-center text-center md:items-start md:text-left">
           <!-- Small yellow eyebrow with custom horizontal line -->
-          <div class="flex items-center gap-3 text-primary font-bold uppercase text-[10px] md:text-xs tracking-[0.1em] mb-5">
+          <div class="flex items-center justify-center md:justify-start gap-3 text-primary font-bold uppercase text-[10px] md:text-xs tracking-[0.1em] mb-5 w-full">
             <span class="w-8 h-[2px] bg-primary"></span>
             <span>GET IN TOUCH</span>
           </div>
@@ -1788,7 +1790,7 @@
           </p>
 
           <!-- Contact Blocks -->
-          <div class="space-y-6">
+          <div class="space-y-6 w-full flex flex-col items-start">
             <!-- Email Block -->
             <div class="flex items-center gap-5">
               <div class="w-[52px] h-[52px] bg-primary flex items-center justify-center shrink-0">
