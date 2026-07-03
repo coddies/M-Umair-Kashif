@@ -1820,10 +1820,15 @@
         <!-- ── RIGHT: Contact Form ── -->
         <form
           id="contact-form"
+          action="https://api.web3forms.com/submit"
+          method="POST"
           onsubmit="handleForm(event)"
           class="bg-[#0f0f0f] border border-white/5 border-l-[3px] border-l-primary p-8 sm:p-10 space-y-8 relative reveal from-right"
           style="transition-delay: 0.1s"
         >
+          <!-- Web3Forms Access Key -->
+          <input type="hidden" name="access_key" value="4e720c29-e251-403f-aa89-30327ed13547">
+
           <!-- Honeypot field for bot spam prevention -->
           <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
 

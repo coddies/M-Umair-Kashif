@@ -355,17 +355,37 @@ function handleForm(e) {
   btn.innerHTML = `<span class="material-symbols-outlined animate-spin text-sm">refresh</span>Sending...`;
   btn.disabled = true;
 
-  // Simulate API transmission
-  setTimeout(() => {
-    btn.innerHTML = `<span class="material-symbols-outlined text-sm">check</span>Message Sent!`;
-    btn.classList.add("bg-green-500", "text-white", "border-green-500");
-    form.reset();
-
+  // Send to Web3Forms
+  const formData = new FormData(form);
+  
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    body: formData
+  })
+  .then(async (response) => {
+    if (response.status == 200) {
+      btn.innerHTML = `<span class="material-symbols-outlined text-sm">check</span>Message Sent!`;
+      btn.classList.add("bg-green-500", "text-white", "border-green-500");
+      form.reset();
+    } else {
+      btn.innerHTML = `<span class="material-symbols-outlined text-sm">error</span>Failed`;
+      btn.classList.add("bg-red-500", "text-white", "border-red-500");
+    }
+    
     // 30 seconds rate limit cooldown for the submit button
     setTimeout(() => {
       btn.disabled = false;
       btn.innerHTML = prevHTML;
-      btn.classList.remove("bg-green-500", "text-white", "border-green-500");
+      btn.classList.remove("bg-green-500", "bg-red-500", "text-white", "border-green-500", "border-red-500");
     }, 30000);
-  }, 1500);
+  })
+  .catch(error => {
+    btn.innerHTML = `<span class="material-symbols-outlined text-sm">error</span>Error`;
+    btn.classList.add("bg-red-500", "text-white", "border-red-500");
+    setTimeout(() => {
+      btn.disabled = false;
+      btn.innerHTML = prevHTML;
+      btn.classList.remove("bg-red-500", "text-white", "border-red-500");
+    }, 5000);
+  });
 }
